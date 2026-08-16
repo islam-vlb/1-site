@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 const items = [
@@ -27,18 +28,32 @@ export default function WhySection() {
   return (
     <section className="bg-white border-y border-navy/8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        <Reveal className="max-w-xl mb-14">
-          <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-4">Our Philosophy</p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-navy leading-tight text-balance">
-            Why PrecisionFertilityLab
-          </h2>
-          <p className="mt-4 text-navy/60 font-body leading-relaxed">
-            We built a private, precise, and approachable way to begin understanding your
-            fertility — without stepping into a clinic.
-          </p>
-        </Reveal>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <Reveal className="max-w-xl">
+            <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-4">Our Philosophy</p>
+            <h2 className="font-heading text-3xl sm:text-4xl text-navy leading-tight text-balance">
+              Why PrecisionFertilityLab
+            </h2>
+            <p className="mt-4 text-navy/60 font-body leading-relaxed">
+              We built a private, precise, and approachable way to begin understanding your
+              fertility — without stepping into a clinic.
+            </p>
+          </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Reveal delay={0.1} className="relative">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-navy/10 shadow-sm">
+              <Image
+                src="/images/lab-microscope.jpg"
+                alt="Laboratory microscope equipment"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-navy/10 to-transparent pointer-events-none" />
+            </div>
+          </Reveal>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
               <div className="h-full border border-navy/10 rounded-lg p-7 hover:border-teal/40 transition-colors">

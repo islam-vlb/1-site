@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { TEST_KIT_HREF } from "@/lib/config";
@@ -50,34 +51,16 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <circle cx="200" cy="200" r="170" fill="none" stroke="#0C6B6E" strokeWidth="0.75" opacity="0.35" />
-              <circle cx="200" cy="200" r="130" fill="none" stroke="#0C6B6E" strokeWidth="0.75" opacity="0.5" />
-              <circle cx="200" cy="200" r="90" fill="none" stroke="#0C6B6E" strokeWidth="1" opacity="0.65" />
-              <circle cx="200" cy="200" r="50" fill="#0C6B6E" opacity="0.06" />
-              <motion.circle
-                cx="245" cy="155" r="10" fill="#14181F"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div className="relative h-full w-full rounded-3xl overflow-hidden border border-navy/10 shadow-sm">
+              <Image
+                src="/images/hero-medical.jpg"
+                alt="Modern laboratory diagnostic equipment"
+                fill
+                priority
+                className="object-cover"
               />
-              {Array.from({ length: 24 }).map((_, i) => {
-                const angle = (i / 24) * Math.PI * 2;
-                const r1 = 178, r2 = 188;
-                return (
-                  <line
-                    key={i}
-                    x1={200 + r1 * Math.cos(angle)}
-                    y1={200 + r1 * Math.sin(angle)}
-                    x2={200 + r2 * Math.cos(angle)}
-                    y2={200 + r2 * Math.sin(angle)}
-                    stroke="#0C6B6E"
-                    strokeWidth="1"
-                    opacity="0.3"
-                  />
-                );
-              })}
-            </svg>
+              <div className="absolute inset-0 bg-gradient-to-tr from-navy/10 to-transparent pointer-events-none" />
+            </div>
           </motion.div>
         </div>
       </div>

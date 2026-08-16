@@ -3,7 +3,7 @@ import Hero from "@/components/home/Hero";
 import WhySection from "@/components/home/WhySection";
 import FeaturedProduct from "@/components/home/FeaturedProduct";
 import HowItWorks from "@/components/home/HowItWorks";
-import BeyondTesting from "@/components/home/BeyondTesting";
+import BuiltAroundBetterInfo from "@/components/home/BuiltAroundBetterInfo";
 
 export const metadata: Metadata = {
   title: "Private, At-Home Fertility Wellness",
@@ -18,7 +18,7 @@ export default function HomePage() {
       <WhySection />
       <FeaturedProduct />
       <HowItWorks />
-      <BeyondTesting />
+      <BuiltAroundBetterInfo />
     </div>
   );
 }

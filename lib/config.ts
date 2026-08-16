@@ -21,8 +21,7 @@ export const SUPPLEMENT_HREF = "/product/male-fertility-support";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Test Kit", href: TEST_KIT_HREF },
-  { label: "Wellness", href: SUPPLEMENT_HREF },
+  { label: "Products", href: "#", hasDropdown: true },
   { label: "Science", href: "/science" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
