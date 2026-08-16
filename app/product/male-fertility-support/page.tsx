@@ -67,7 +67,6 @@ export default function SupplementPage() {
               {product.name}
             </h1>
             <p className="text-navy/55 font-body mb-5">{product.caption}</p>
-            <p className="font-heading text-2xl text-navy mb-8">${product.price.toFixed(2)}</p>
             <PurchasePanel product={product} />
           </div>
         </div>

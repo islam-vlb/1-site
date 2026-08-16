@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Product } from "@/lib/supabase";
 import { useCart } from "@/context/CartContext";
+import { BUSINESS } from "@/lib/config";
 
 const trustItems = [
   { label: "Private Experience", icon: "M12 2a5 5 0 015 5v3h1a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a2 2 0 012-2h1V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v3h6V7a3 3 0 00-3-3z" },
@@ -16,6 +17,10 @@ export default function PurchasePanel({ product }: { product: Product }) {
   const { addItem } = useCart();
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
+
+  const subtotal = product.price * quantity;
+  const shipping = BUSINESS.shippingFlatRate;
+  const total = subtotal + shipping;
 
   function handleBuyNow() {
     addItem(product, quantity);
@@ -55,6 +60,21 @@ export default function PurchasePanel({ product }: { product: Product }) {
       >
         Buy Now
       </button>
+
+      <div className="mt-6 space-y-2 text-sm font-body text-navy/70">
+        <div className="flex justify-between">
+          <span>Subtotal ({quantity} × ${product.price.toFixed(2)})</span>
+          <span>${subtotal.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Shipping</span>
+          <span>${shipping.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between font-semibold text-navy pt-2 border-t border-navy/10">
+          <span>Total</span>
+          <span>${total.toFixed(2)}</span>
+        </div>
+      </div>
 
       <div className="mt-8 grid grid-cols-2 gap-4">
         {trustItems.map((item) => (
