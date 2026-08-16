@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <rect width="600" height="600" fill="#FAFBFC"/>
+  <rect x="40" y="40" width="520" height="520" rx="16" fill="none" stroke="#0E7C86" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="255" y="180" width="90" height="140" rx="20" fill="#0E7C86" opacity="0.12"/>
+  <rect x="255" y="180" width="90" height="55" rx="20" fill="#0E7C86" opacity="0.25"/>
+  <text x="300" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#0F2942" font-weight="600">Product Image Placeholder</text>
+  <text x="300" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0F2942" opacity="0.6">Male Fertility Support Formula</text>
+</svg>
