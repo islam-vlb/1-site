@@ -50,7 +50,7 @@ export default function ContactPage() {
           <textarea required placeholder="Your message" rows={5} className="w-full border border-teal/30 rounded-md px-4 py-3 font-body text-sm" />
           <button
             type="submit"
-            className="bg-accent text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-accent/90 transition-colors"
+             className="bg-navy text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-teal transition-colors"
           >
             Send Message
           </button>

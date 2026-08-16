@@ -35,7 +35,7 @@ export default function AddToCartButton({
       </div>
       <button
         onClick={() => addItem(product, quantity)}
-        className="flex-1 bg-accent text-white font-body font-semibold rounded-md py-3 px-6 hover:bg-accent/90 transition-colors"
+        className="flex-1 bg-navy text-white font-body font-semibold rounded-md py-3 px-6 hover:bg-teal transition-colors"
       >
         {label}
       </button>

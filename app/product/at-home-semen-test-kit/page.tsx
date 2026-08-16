@@ -1,33 +1,46 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
-import { PRODUCTS, INGREDIENTS } from "@/lib/supabase";
+import { PRODUCTS } from "@/lib/supabase";
 import Breadcrumb from "@/components/Breadcrumb";
 import PurchasePanel from "@/components/PurchasePanel";
 import Highlights from "@/components/product/Highlights";
+import ShippingReturns from "@/components/product/ShippingReturns";
+import TrustSection from "@/components/product/TrustSection";
+import RelatedProduct from "@/components/product/RelatedProduct";
 import Faq from "@/components/Faq";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Male Fertility Support Formula",
+  title: "At-Home Semen Test Kit",
   description:
-    "A daily supplement with zinc, folic acid, and CoQ10 that may help support male reproductive wellness.",
+    "A private, at-home semen analysis kit for a first look at key fertility indicators — concentration and motility — from home.",
 };
 
-const product = PRODUCTS[1];
+const product = PRODUCTS[0];
+const supplement = PRODUCTS[1];
+
+const steps = [
+  { n: "01", title: "Collect", desc: "Follow the private, at-home collection process included in your kit." },
+  { n: "02", title: "Follow the Instructions", desc: "Use the included step-by-step guide to process your sample." },
+  { n: "03", title: "Review Your Information", desc: "Review your results at home and share them with your physician if you choose." },
+];
 
 const faqItems = [
   {
-    q: "How do I take this supplement?",
-    a: "Take one capsule per day as part of your daily routine, or as directed by your physician.",
+    q: "Is this diagnostic?",
+    a: "No. This kit is intended as a wellness indicator to give you a private first look at key fertility indicators. It does not replace a professional medical diagnosis.",
   },
   {
-    q: "Can I take this alongside the At-Home Semen Test Kit?",
-    a: "Yes. Many customers use the Test Kit to get a first look at fertility indicators and this formula as ongoing daily support.",
+    q: "How private is this?",
+    a: "Your kit ships in discreet packaging with no identifying labels, and your results are only visible to you.",
   },
   {
-    q: "Is this FDA approved?",
-    a: "No. As with all dietary supplements, these statements have not been evaluated by the FDA, and this product is not intended to diagnose, treat, cure, or prevent any disease.",
+    q: "How do I get my results?",
+    a: "Results are available quickly at home once you complete the included testing process.",
+  },
+  {
+    q: "Can I share results with my doctor?",
+    a: "Yes. Your results can be shared with a healthcare provider for further guidance and follow-up.",
   },
   {
     q: "What's your return policy?",
@@ -35,14 +48,14 @@ const faqItems = [
   },
 ];
 
-export default function SupplementPage() {
+export default function TestKitPage() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
-            { label: "Wellness", href: "/product/male-fertility-support" },
+            { label: "Test Kit", href: "/product/at-home-semen-test-kit" },
             { label: product.name },
           ]}
         />
@@ -95,28 +108,6 @@ export default function SupplementPage() {
           </Reveal>
 
           <Reveal>
-            <h2 className="font-heading text-2xl text-navy mb-4">Ingredients</h2>
-            <div className="bg-offwhite rounded-lg border border-navy/10 overflow-hidden">
-              {INGREDIENTS.map((ing, i) => (
-                <div
-                  key={ing.name}
-                  className={`flex justify-between px-6 py-3 font-body text-sm ${
-                    i % 2 === 0 ? "bg-white" : "bg-offwhite"
-                  }`}
-                >
-                  <span className="text-navy">{ing.name}</span>
-                  <span className="text-navy/55 font-medium">{ing.amount}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4">
-              <Link href="/ingredients" className="text-teal font-body text-sm font-medium hover:underline">
-                View full ingredients page →
-              </Link>
-            </p>
-          </Reveal>
-
-          <Reveal>
             <h2 className="font-heading text-2xl text-navy mb-4">Key Features</h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {product.features.map((f) => (
@@ -128,9 +119,22 @@ export default function SupplementPage() {
           </Reveal>
 
           <Reveal>
+            <h2 className="font-heading text-2xl text-navy mb-8">How It Works</h2>
+            <div className="grid sm:grid-cols-3 gap-8">
+              {steps.map((s) => (
+                <div key={s.n}>
+                  <span className="font-heading text-3xl text-teal/30 block mb-2">{s.n}</span>
+                  <h3 className="font-heading text-navy mb-1.5">{s.title}</h3>
+                  <p className="text-sm text-navy/55 font-body leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
             <div className="bg-offwhite border border-navy/10 rounded-lg p-6">
               <h3 className="font-heading text-navy mb-2 text-sm uppercase tracking-wide">
-                FDA Disclosure
+                Important Information
               </h3>
               <p className="text-sm text-navy/65 font-body leading-relaxed">{product.disclaimer}</p>
             </div>
@@ -150,6 +154,19 @@ export default function SupplementPage() {
           <h2 className="font-heading text-2xl text-navy mb-8">Frequently Asked Questions</h2>
           <Faq items={faqItems} />
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <h2 className="font-heading text-2xl text-navy mb-8">Shipping &amp; Returns</h2>
+        <ShippingReturns />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+        <TrustSection />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+        <RelatedProduct product={supplement} />
       </section>
     </div>
   );

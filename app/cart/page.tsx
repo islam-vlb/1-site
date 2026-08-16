@@ -15,7 +15,7 @@ export default function CartPage() {
         <p className="text-navy/60 font-body mb-8">Browse our products to get started.</p>
         <Link
           href="/"
-          className="inline-block bg-accent text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-accent/90 transition-colors"
+          className="inline-block bg-navy text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-teal transition-colors"
         >
           Shop At-Home Test Kit
         </Link>
@@ -55,7 +55,7 @@ export default function CartPage() {
                   +
                 </button>
                 <button
-                  className="ml-4 text-xs text-navy/50 hover:text-accent font-body"
+                  className="ml-4 text-xs text-navy/50 hover:text-teal font-body"
                   onClick={() => removeItem(item.productId)}
                 >
                   Remove
@@ -84,7 +84,7 @@ export default function CartPage() {
         </div>
         <Link
           href="/checkout"
-          className="block text-center bg-accent text-white font-body font-semibold rounded-md py-3 hover:bg-accent/90 transition-colors mt-4"
+          className="block text-center bg-navy text-white font-body font-semibold rounded-md py-3 hover:bg-teal transition-colors mt-4"
         >
           Proceed to Checkout
         </Link>

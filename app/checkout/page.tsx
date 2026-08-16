@@ -31,7 +31,7 @@ export default function CheckoutPage() {
         <h1 className="font-heading text-3xl font-bold text-navy mb-4">Your Cart is Empty</h1>
         <Link
           href="/"
-          className="inline-block bg-accent text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-accent/90 transition-colors"
+          className="inline-block bg-navy text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-teal transition-colors"
         >
           Shop At-Home Test Kit
         </Link>
@@ -98,7 +98,7 @@ export default function CheckoutPage() {
                 I have read and agree to the{" "}
                 <Link href="/terms" className="font-bold underline text-teal">Terms &amp; Conditions</Link>,{" "}
                 <Link href="/privacy" className="font-bold underline text-navy">Privacy Policy</Link>, and{" "}
-                <Link href="/refund" className="font-bold underline text-accent">Refund Policy</Link>.
+                <Link href="/refund" className="font-bold underline text-teal-dark">Refund Policy</Link>.
               </span>
             </label>
 
@@ -122,7 +122,7 @@ export default function CheckoutPage() {
           <button
             type="submit"
             disabled={!agreed || submitting}
-            className="w-full bg-accent text-white font-body font-semibold rounded-md py-4 hover:bg-accent/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+             className="w-full bg-navy text-white font-body font-semibold rounded-md py-4 hover:bg-teal transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {submitting ? "Placing Order..." : `Place Order — $${total.toFixed(2)}`}
           </button>

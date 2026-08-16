@@ -56,7 +56,7 @@ export default function CartDrawer() {
                         +
                       </button>
                       <button
-                        className="ml-auto text-xs text-navy/50 hover:text-accent font-body"
+                        className="ml-auto text-xs text-navy/50 hover:text-teal font-body"
                         onClick={() => removeItem(item.productId)}
                       >
                         Remove
@@ -85,7 +85,7 @@ export default function CartDrawer() {
             <Link
               href="/checkout"
               onClick={closeDrawer}
-              className="block text-center bg-accent text-white rounded-md py-2.5 font-body font-semibold hover:bg-accent/90 transition-colors"
+               className="block text-center bg-navy text-white rounded-md py-2.5 font-body font-semibold hover:bg-teal transition-colors"
             >
               Checkout
             </Link>

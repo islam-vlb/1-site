@@ -25,7 +25,7 @@ export default function OrderConfirmationPage() {
       </div>
       <Link
         href="/"
-        className="inline-block bg-accent text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-accent/90 transition-colors"
+         className="inline-block bg-navy text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-teal transition-colors"
       >
         Continue Shopping
       </Link>

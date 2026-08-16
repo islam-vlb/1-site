@@ -16,21 +16,23 @@ export const BUSINESS = {
   shippingFlatRate: 7.95,
 };
 
+export const TEST_KIT_HREF = "/product/at-home-semen-test-kit";
+export const SUPPLEMENT_HREF = "/product/male-fertility-support";
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
+  { label: "Test Kit", href: TEST_KIT_HREF },
+  { label: "Wellness", href: SUPPLEMENT_HREF },
+  { label: "Science", href: "/science" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
-export const PRODUCTS_MENU = [
-  { label: "At-Home Semen Test Kit", href: "/" },
-  { label: "Male Fertility Support Formula", href: "/product/male-fertility-support" },
-];
-
 export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Test Kit", href: "/" },
-  { label: "Supplement", href: "/product/male-fertility-support" },
+  { label: "Test Kit", href: TEST_KIT_HREF },
+  { label: "Wellness Supplement", href: SUPPLEMENT_HREF },
+  { label: "Science", href: "/science" },
   { label: "Ingredients", href: "/ingredients" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
