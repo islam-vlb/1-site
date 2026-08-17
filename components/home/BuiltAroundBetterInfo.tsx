@@ -35,8 +35,8 @@ export default function BuiltAroundBetterInfo() {
             </h2>
             <p className="text-navy/60 font-body leading-relaxed mb-6">
               We designed the At-Home Semen Test Kit to give you a private, convenient first look at
-              key fertility indicators — without requiring a clinic visit. Clear guidance, discreet
-              packaging, and results you can review on your own terms.
+              key fertility indicators — without requiring a clinic visit. Easy-to-follow guidance,
+              discreet packaging, and results available at home.
             </p>
             <ul className="space-y-3 mb-8">
               {features.map((f) => (

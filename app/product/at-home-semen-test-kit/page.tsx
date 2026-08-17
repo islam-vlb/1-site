@@ -19,12 +19,6 @@ export const metadata: Metadata = {
 const product = PRODUCTS[0];
 const supplement = PRODUCTS[1];
 
-const steps = [
-  { n: "01", title: "Collect", desc: "Follow the private, at-home collection process included in your kit." },
-  { n: "02", title: "Follow the Instructions", desc: "Use the included step-by-step guide to process your sample." },
-  { n: "03", title: "Review Your Information", desc: "Review your results at home and share them with your physician if you choose." },
-];
-
 const faqItems = [
   {
     q: "Is this diagnostic?",
@@ -34,10 +28,10 @@ const faqItems = [
     q: "How private is this?",
     a: "Your kit ships in discreet packaging with no identifying labels, and your results are only visible to you.",
   },
-  {
-    q: "How do I get my results?",
-    a: "Results are available quickly at home once you complete the included testing process.",
-  },
+    {
+      q: "How do I get my results?",
+      a: "Results are available at home.",
+    },
   {
     q: "Can I share results with my doctor?",
     a: "Yes. Your results can be shared with a healthcare provider for further guidance and follow-up.",
@@ -118,16 +112,11 @@ export default function TestKitPage() {
           </Reveal>
 
           <Reveal>
-            <h2 className="font-heading text-2xl text-navy mb-8">How It Works</h2>
-            <div className="grid sm:grid-cols-3 gap-8">
-              {steps.map((s) => (
-                <div key={s.n}>
-                  <span className="font-heading text-3xl text-teal/30 block mb-2">{s.n}</span>
-                  <h3 className="font-heading text-navy mb-1.5">{s.title}</h3>
-                  <p className="text-sm text-navy/55 font-body leading-relaxed">{s.desc}</p>
-                </div>
-              ))}
-            </div>
+            <h2 className="font-heading text-2xl text-navy mb-4">How It Works</h2>
+            <p className="text-navy/65 font-body leading-relaxed">
+              The At-Home Semen Test Kit includes easy-to-follow, step-by-step instructions for the
+              at-home collection process. Complete the process in the comfort of your own space.
+            </p>
           </Reveal>
 
           <Reveal>

@@ -30,12 +30,12 @@ export const PRODUCTS: Product[] = [
     price: 44.95,
     tagline: "Private, At-Home Fertility Insight",
     description:
-      "An at-home semen analysis kit designed to give men a private, convenient first look at key fertility indicators — including sperm concentration and motility — from the comfort of home. Results are available quickly and can be shared with a healthcare provider for further guidance. This kit is intended as a wellness indicator and does not replace professional medical diagnosis.",
+      "An at-home semen analysis kit designed to give men a private, convenient first look at key fertility indicators — including sperm concentration and motility — from the comfort of home. Results are available at home and can be shared with a healthcare provider for further guidance. This kit is intended as a wellness indicator and does not replace professional medical diagnosis.",
     features: [
       "Private at-home sample collection",
       "Tests key fertility indicators: concentration and motility",
       "Easy-to-follow step-by-step instructions included",
-      "Results available quickly at home",
+      "Results available at home",
       "Discreet packaging for shipping and storage",
       "Results may be shared with your physician for follow-up guidance",
     ],
