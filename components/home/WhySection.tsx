@@ -26,43 +26,43 @@ const items = [
 
 export default function WhySection() {
   return (
-    <section className="bg-white border-y border-navy/8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="bg-white border-y border-navy/[0.08]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center mb-20">
           <Reveal className="max-w-xl">
-            <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-4">Our Philosophy</p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-navy leading-tight text-balance">
+            <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-5 font-semibold">Our Philosophy</p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.5rem] text-navy leading-[1.15] text-balance mb-6">
               Why PrecisionFertilityLab
             </h2>
-            <p className="mt-4 text-navy/60 font-body leading-relaxed">
+            <p className="text-navy/60 font-body leading-relaxed text-lg">
               We built a private, precise, and approachable way to begin understanding your
               fertility — without stepping into a clinic.
             </p>
           </Reveal>
 
           <Reveal delay={0.1} className="relative">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-navy/10 shadow-sm">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-navy/10 shadow-xl">
               <Image
                 src="/images/lab-microscope.jpg"
                 alt="Laboratory microscope equipment"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-navy/10 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-navy/15 to-transparent pointer-events-none" />
             </div>
           </Reveal>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <div className="h-full border border-navy/10 rounded-lg p-7 hover:border-teal/40 transition-colors">
-                <div className="h-11 w-11 rounded-full bg-teal/8 flex items-center justify-center mb-5">
-                  <svg className="h-5 w-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <div className="h-full border border-navy/10 rounded-2xl p-7 hover:border-teal/40 hover:shadow-lg transition-all duration-300 group">
+                <div className="h-12 w-12 rounded-full bg-teal/[0.08] flex items-center justify-center mb-6 group-hover:bg-teal/15 transition-colors duration-300">
+                  <svg className="h-5 w-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d={item.icon} strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 className="font-heading text-lg text-navy mb-2 tracking-wide uppercase text-sm">
+                <h3 className="font-heading text-lg text-navy mb-2.5 tracking-wide uppercase text-sm font-semibold">
                   {item.title}
                 </h3>
                 <p className="text-sm text-navy/55 font-body leading-relaxed">{item.desc}</p>

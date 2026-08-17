@@ -29,18 +29,18 @@ export default function PurchasePanel({ product }: { product: Product }) {
 
   return (
     <div>
-      <div className="flex items-center gap-4">
-        <div className="flex items-center border border-navy/20 rounded-full">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center border-2 border-navy/15 rounded-full">
           <button
-            className="h-12 w-12 text-navy hover:bg-offwhite rounded-l-full"
+            className="h-11 w-11 text-navy hover:bg-offwhite transition-colors duration-150 rounded-l-full font-body text-lg"
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}
             aria-label="Decrease quantity"
           >
             −
           </button>
-          <span className="w-8 text-center font-body">{quantity}</span>
+          <span className="w-10 text-center font-body text-sm font-semibold">{quantity}</span>
           <button
-            className="h-12 w-12 text-navy hover:bg-offwhite rounded-r-full"
+            className="h-11 w-11 text-navy hover:bg-offwhite transition-colors duration-150 rounded-r-full font-body text-lg"
             onClick={() => setQuantity((q) => q + 1)}
             aria-label="Increase quantity"
           >
@@ -49,37 +49,37 @@ export default function PurchasePanel({ product }: { product: Product }) {
         </div>
         <button
           onClick={() => addItem(product, quantity)}
-          className="flex-1 border border-navy text-navy font-body font-medium rounded-full py-3 hover:bg-navy hover:text-white transition-colors"
+          className="flex-1 border-2 border-navy text-navy font-body font-semibold text-sm tracking-wide uppercase rounded-full py-3 hover:bg-navy hover:text-white transition-all duration-300"
         >
           Add to Cart
         </button>
       </div>
       <button
         onClick={handleBuyNow}
-        className="mt-3 w-full bg-navy text-white font-body font-medium rounded-full py-3.5 hover:bg-teal transition-colors"
+        className="w-full bg-navy text-white font-body font-semibold text-sm tracking-wide uppercase rounded-full py-3.5 hover:bg-teal transition-all duration-300 shadow-md hover:shadow-lg mb-6"
       >
         Buy Now
       </button>
 
-      <div className="mt-6 space-y-2 text-sm font-body text-navy/70">
+      <div className="bg-offwhite rounded-xl border border-navy/10 p-5 space-y-2.5 text-sm font-body text-navy/70 mb-8">
         <div className="flex justify-between">
           <span>Subtotal ({quantity} × ${product.price.toFixed(2)})</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span className="font-medium">${subtotal.toFixed(2)}</span>
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span>${shipping.toFixed(2)}</span>
+          <span className="font-medium">${shipping.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between font-semibold text-navy pt-2 border-t border-navy/10">
+        <div className="flex justify-between font-semibold text-navy pt-2.5 border-t border-navy/10">
           <span>Total</span>
           <span>${total.toFixed(2)}</span>
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {trustItems.map((item) => (
           <div key={item.label} className="flex items-center gap-2.5">
-            <svg className="h-4 w-4 text-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <svg className="h-4 w-4 text-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d={item.icon} strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="text-xs font-body text-navy/60">{item.label}</span>
