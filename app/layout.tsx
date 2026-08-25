@@ -7,8 +7,8 @@ import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: {
-    default: "PrecisionFertilityLab",
-    template: "%s | PrecisionFertilityLab",
+    default: "NuressaIndividualInsight",
+    template: "%s | NuressaIndividualInsight",
   },
   description: "Private, at-home fertility wellness products.",
 };

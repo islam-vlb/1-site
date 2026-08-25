@@ -32,7 +32,7 @@ export default function WhySection() {
           <Reveal className="max-w-xl">
             <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-5 font-semibold">Our Philosophy</p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.5rem] text-navy leading-[1.15] text-balance mb-6">
-              Why PrecisionFertilityLab
+              Why NuressaIndividualInsight
             </h2>
             <p className="text-navy/60 font-body leading-relaxed text-lg">
               We built a private, precise, and approachable way to begin understanding your

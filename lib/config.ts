@@ -1,7 +1,7 @@
 export const BUSINESS = {
   legalName: "TrevCore LLC",
-  storeName: "PrecisionFertilityLab",
-  domain: "precisionfertilitylab.com",
+  storeName: "NuressaIndividualInsight",
+  domain: "nuressaindividualinsight.com",
   address: {
     line1: "3171 S 129th E Ave Ste A #5318",
     city: "Tulsa",
@@ -9,9 +9,16 @@ export const BUSINESS = {
     zip: "74134",
     country: "USA",
   },
-  // PLACEHOLDER: owner will provide the real support phone number.
-  phone: "(PENDING)",
-  email: "support@precisionfertilitylab.com",
+  fulfillmentAddress: {
+    line1: "4711 34th St. N. Suite F",
+    city: "St. Petersburg",
+    state: "FL",
+    zip: "33714",
+    country: "USA",
+  },
+  phone: "(866) 755-7091",
+  email: "support@nuressaindividualinsight.com",
+  descriptor: "nuressaindividualinsig",
   copyrightYear: 2026,
   shippingFlatRate: 7.95,
 };

@@ -46,6 +46,12 @@ export default function RefundPage() {
       ],
     },
     {
+      heading: "Return Address",
+      body: [
+        `Approved returns should be sent to ${BUSINESS.legalName}, ${BUSINESS.fulfillmentAddress.line1}, ${BUSINESS.fulfillmentAddress.city}, ${BUSINESS.fulfillmentAddress.state} ${BUSINESS.fulfillmentAddress.zip} — see our Fulfillment Address page for details.`,
+      ],
+    },
+    {
       heading: "Contact Us",
       body: [
         `Questions about returns or refunds can be directed to ${BUSINESS.email} or ${BUSINESS.legalName}, ${BUSINESS.address.line1}, ${BUSINESS.address.city}, ${BUSINESS.address.state} ${BUSINESS.address.zip}.`,

@@ -35,7 +35,7 @@ export default function TermsPage() {
       heading: "Orders and Payment",
       body: [
         "All orders are subject to acceptance and availability. We accept Visa and Mastercard. By placing an order, you authorize us to charge your payment method for the total order amount, including applicable shipping.",
-        `Charges will appear on your statement as "${BUSINESS.storeName}."`,
+        `Charges will appear on your statement as "${BUSINESS.descriptor}."`,
       ],
     },
     {

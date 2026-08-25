@@ -8,7 +8,7 @@ import BuiltAroundBetterInfo from "@/components/home/BuiltAroundBetterInfo";
 export const metadata: Metadata = {
   title: "Private, At-Home Fertility Wellness",
   description:
-    "PrecisionFertilityLab offers a private, at-home semen test kit and supporting wellness products for men.",
+    "NuressaIndividualInsight offers a private, at-home semen test kit and supporting wellness products for men.",
 };
 
 export default function HomePage() {

@@ -22,7 +22,7 @@ export default async function SearchPage({
         {q ? (
           <>Results for &ldquo;{q}&rdquo;</>
         ) : (
-          <>Search PrecisionFertilityLab</>
+          <>Search NuressaIndividualInsight</>
         )}
       </h1>
       <p className="text-navy/50 font-body mb-10">

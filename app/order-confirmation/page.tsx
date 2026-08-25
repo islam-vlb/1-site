@@ -21,7 +21,7 @@ export default function OrderConfirmationPage() {
         <p>Questions about your order? Contact us at{" "}
           <a href={`mailto:${BUSINESS.email}`} className="text-teal hover:underline">{BUSINESS.email}</a>.
         </p>
-        <p>Charges will appear as PrecisionFertilityLab on your statement.</p>
+        <p>Charges will appear as {BUSINESS.descriptor} on your statement.</p>
       </div>
       <Link
         href="/"

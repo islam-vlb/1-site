@@ -9,11 +9,16 @@ export default function FulfillmentPage() {
       </p>
       <div className="bg-white rounded-lg border border-teal/10 p-6 font-body text-navy">
         <p className="font-semibold">{BUSINESS.legalName}</p>
-        <p>{BUSINESS.address.line1}</p>
+        <p>{BUSINESS.fulfillmentAddress.line1}</p>
         <p>
-          {BUSINESS.address.city}, {BUSINESS.address.state} {BUSINESS.address.zip}
+          {BUSINESS.fulfillmentAddress.city}, {BUSINESS.fulfillmentAddress.state}{" "}
+          {BUSINESS.fulfillmentAddress.zip}
         </p>
-        <p>{BUSINESS.address.country === "USA" ? "United States" : BUSINESS.address.country}</p>
+        <p>
+          {BUSINESS.fulfillmentAddress.country === "USA"
+            ? "United States"
+            : BUSINESS.fulfillmentAddress.country}
+        </p>
       </div>
       <p className="text-sm text-navy/50 font-body mt-6">
         Please do not send returns without first contacting {BUSINESS.email} for return

@@ -11,6 +11,13 @@ export default function ShippingPage() {
           <p>We currently ship to addresses within the United States only.</p>
         </div>
         <div>
+          <h2 className="font-heading font-semibold text-navy text-lg mb-2">Orders Ship From</h2>
+          <p>
+            {BUSINESS.fulfillmentAddress.line1}, {BUSINESS.fulfillmentAddress.city},{" "}
+            {BUSINESS.fulfillmentAddress.state} {BUSINESS.fulfillmentAddress.zip}
+          </p>
+        </div>
+        <div>
           <h2 className="font-heading font-semibold text-navy text-lg mb-2">Shipping Method &amp; Rate</h2>
           <p>
             All orders ship via USPS Priority Mail at a flat rate of $

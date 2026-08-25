@@ -109,7 +109,7 @@ export default function CheckoutPage() {
               Your credit card will be charged ${total.toFixed(2)}.
             </p>
             <p className="text-sm font-bold text-navy">
-              Charges will appear as PrecisionFertilityLab on your statement.
+              Charges will appear as {BUSINESS.descriptor} on your statement.
             </p>
             <p className="text-sm font-semibold text-navy">
               Personal information will not be shared with Third Parties.

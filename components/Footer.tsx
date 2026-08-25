@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-8 border-t border-white/10 space-y-3">
           <p className="text-sm font-bold text-white/90">
-            Charges appear as PrecisionFertilityLab on your statement.
+            Charges appear as {BUSINESS.descriptor} on your statement.
           </p>
           <p className="text-sm font-semibold text-white/90">
             Personal information will not be shared with Third Parties.
