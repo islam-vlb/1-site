@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
       "male fertility", "concentration", "motility", "diagnostic",
     ],
     image: {
-      src: "/images/test-kit-placeholder.svg",
+      src: "/images/at-home-semen-test-kit.png",
       alt: "At-Home Semen Test Kit — Product Image",
     },
   },
@@ -81,8 +81,7 @@ export const PRODUCTS: Product[] = [
       "One capsule serving per day, easy to incorporate into a daily routine",
     ],
     whatsIncluded: [
-      "One-month supply — 30 capsules",
-      "One capsule per daily serving",
+      "One bottle — 60 vegan capsules",
       "Discreet, unmarked outer packaging",
     ],
     highlights: [
@@ -98,7 +97,7 @@ export const PRODUCTS: Product[] = [
       "CoQ10", "maca root", "vitamin d3", "vitamin e", "daily vitamin",
     ],
     image: {
-      src: "/images/supplement-placeholder.svg",
+      src: "/images/male-fertility-support.png",
       alt: "Male Fertility Support Formula — Product Image",
     },
   },
