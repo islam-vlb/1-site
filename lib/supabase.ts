@@ -87,8 +87,8 @@ export const PRODUCTS: Product[] = [
       { id: "3kit-none", label: "3 Test Kits", price: 96.95, image: "/images/products/3kit-boxes.jpg", meta: "No supplement included", group: "kit-only" },
     ],
     image: {
-      src: "/images/at-home-semen-test-kit.png",
-      alt: "At-Home Semen Test Kit — Product Image",
+      src: "/images/products/1kit-open-contents.jpg",
+      alt: "At-Home Semen Test Kit",
     },
   },
   {
@@ -135,8 +135,8 @@ export const PRODUCTS: Product[] = [
       { id: "4x60", label: "4 Bottles — 240 Capsules", price: 38.64, image: "/images/supplements/4-bottles-60ct.jpg", bottleCount: 4, capsuleCount: 240 },
     ],
     image: {
-      src: "/images/male-fertility-support.png",
-      alt: "Male Fertility Support Formula — Product Image",
+      src: "/images/supplements/1-bottle-60ct.jpg",
+      alt: "Male Fertility Support Formula",
     },
   },
 ];
