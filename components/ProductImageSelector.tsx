@@ -12,13 +12,18 @@ export default function ProductImageSelector({ product }: { product: Product }) 
   return (
     <>
       <div className="relative aspect-square rounded-2xl overflow-hidden bg-white border border-navy/10 shadow-sm">
-        <Image
-          src={selected.image}
-          alt={selected.label}
-          fill
-          priority
-          className="object-contain p-10"
-        />
+        {product.variants.map((v) => (
+          <Image
+            key={v.id}
+            src={v.image}
+            alt={v.label}
+            fill
+            priority
+            className={`object-cover transition-opacity duration-200 ${
+              v.id === selected.id ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-0"
+            }`}
+          />
+        ))}
       </div>
       <div>
         <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-3">
