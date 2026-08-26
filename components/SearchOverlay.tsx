@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { searchProducts } from "@/lib/supabase";
+import { searchProducts, startingPrice } from "@/lib/supabase";
 
 export default function SearchOverlay({
   isOpen,
@@ -129,7 +129,7 @@ export default function SearchOverlay({
                               <p className="text-xs text-navy/50 font-body truncate">{product.caption}</p>
                             </div>
                             <span className="font-body font-semibold text-navy text-sm shrink-0">
-                              ${product.price.toFixed(2)}
+                              From ${startingPrice(product).toFixed(2)}
                             </span>
                           </button>
                         </li>

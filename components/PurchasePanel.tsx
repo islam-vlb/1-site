@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Product } from "@/lib/supabase";
+import { Product, getDefaultVariant } from "@/lib/supabase";
 import { useCart } from "@/context/CartContext";
-import { BUSINESS } from "@/lib/config";
 
 const trustItems = [
   { label: "Private Experience", icon: "M12 2a5 5 0 015 5v3h1a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a2 2 0 012-2h1V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v3h6V7a3 3 0 00-3-3z" },
@@ -16,39 +15,71 @@ const trustItems = [
 export default function PurchasePanel({ product }: { product: Product }) {
   const { addItem } = useCart();
   const router = useRouter();
-  const [quantity, setQuantity] = useState(1);
+  const [variantId, setVariantId] = useState(getDefaultVariant(product).id);
 
-  const subtotal = product.price * quantity;
-  const shipping = BUSINESS.shippingFlatRate;
-  const total = subtotal + shipping;
+  const selected = product.variants.find((v) => v.id === variantId) ?? getDefaultVariant(product);
+  const groups = product.variantGroups;
+
+  function handleAddToCart() {
+    addItem(product, selected);
+  }
 
   function handleBuyNow() {
-    addItem(product, quantity);
+    addItem(product, selected);
     router.push("/checkout");
+  }
+
+  function renderVariantCard(variant: typeof product.variants[number]) {
+    const isSelected = variant.id === selected.id;
+    return (
+      <button
+        key={variant.id}
+        type="button"
+        onClick={() => setVariantId(variant.id)}
+        className={`w-full flex items-center gap-4 rounded-xl border-2 px-4 py-3.5 text-left transition-colors duration-150 ${
+          isSelected ? "border-teal bg-teal/[0.06]" : "border-navy/10 bg-white hover:border-navy/25"
+        }`}
+      >
+        <span
+          className={`h-5 w-5 shrink-0 rounded-full border-2 flex items-center justify-center ${
+            isSelected ? "border-teal" : "border-navy/25"
+          }`}
+        >
+          {isSelected && <span className="h-2.5 w-2.5 rounded-full bg-teal" />}
+        </span>
+        <span className="flex-1 min-w-0">
+          <span className="block font-body text-sm font-medium text-navy leading-snug">{variant.label}</span>
+          {variant.meta && (
+            <span className="block font-body text-xs text-navy/50 mt-0.5">{variant.meta}</span>
+          )}
+        </span>
+        <span className="font-heading text-navy font-semibold shrink-0">${variant.price.toFixed(2)}</span>
+      </button>
+    );
   }
 
   return (
     <div>
+      <div className="space-y-6 mb-6">
+        {groups ? (
+          groups.map((group) => (
+            <div key={group.key}>
+              <p className="text-xs font-body uppercase tracking-[0.15em] text-navy/50 mb-2.5 font-semibold">
+                {group.label}
+              </p>
+              <div className="space-y-2.5">
+                {product.variants.filter((v) => v.group === group.key).map(renderVariantCard)}
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="space-y-2.5">{product.variants.map(renderVariantCard)}</div>
+        )}
+      </div>
+
       <div className="flex items-center gap-3 mb-4">
-        <div className="flex items-center border-2 border-navy/15 rounded-full">
-          <button
-            className="h-11 w-11 text-navy hover:bg-offwhite transition-colors duration-150 rounded-l-full font-body text-lg"
-            onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-            aria-label="Decrease quantity"
-          >
-            −
-          </button>
-          <span className="w-10 text-center font-body text-sm font-semibold">{quantity}</span>
-          <button
-            className="h-11 w-11 text-navy hover:bg-offwhite transition-colors duration-150 rounded-r-full font-body text-lg"
-            onClick={() => setQuantity((q) => q + 1)}
-            aria-label="Increase quantity"
-          >
-            +
-          </button>
-        </div>
         <button
-          onClick={() => addItem(product, quantity)}
+          onClick={handleAddToCart}
           className="flex-1 border-2 border-navy text-navy font-body font-semibold text-sm tracking-wide uppercase rounded-full py-3 hover:bg-navy hover:text-white transition-all duration-300"
         >
           Add to Cart
@@ -63,16 +94,16 @@ export default function PurchasePanel({ product }: { product: Product }) {
 
       <div className="bg-offwhite rounded-xl border border-navy/10 p-5 space-y-2.5 text-sm font-body text-navy/70 mb-8">
         <div className="flex justify-between">
-          <span>Subtotal ({quantity} × ${product.price.toFixed(2)})</span>
-          <span className="font-medium">${subtotal.toFixed(2)}</span>
+          <span>Subtotal</span>
+          <span className="font-medium">${selected.price.toFixed(2)}</span>
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span className="font-medium">${shipping.toFixed(2)}</span>
+          <span className="font-medium">Included</span>
         </div>
         <div className="flex justify-between font-semibold text-navy pt-2.5 border-t border-navy/10">
           <span>Total</span>
-          <span>${total.toFixed(2)}</span>
+          <span>${selected.price.toFixed(2)}</span>
         </div>
       </div>
 

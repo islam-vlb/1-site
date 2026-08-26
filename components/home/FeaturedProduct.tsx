@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS } from "@/lib/supabase";
+import { PRODUCTS, startingPrice } from "@/lib/supabase";
 import AddToCartButton from "@/components/AddToCartButton";
 import Reveal from "@/components/Reveal";
 
@@ -32,7 +32,7 @@ export default function FeaturedProduct() {
               <h3 className="font-heading text-2xl sm:text-3xl lg:text-[1.75rem] text-navy mb-3 leading-tight">{product.name}</h3>
               <p className="text-navy/55 font-body mb-6 leading-relaxed">{product.caption}</p>
               <div className="flex items-baseline gap-3 mb-6">
-                <p className="font-heading text-3xl text-navy">${product.price.toFixed(2)}</p>
+                <p className="font-heading text-3xl text-navy">From ${startingPrice(product).toFixed(2)}</p>
               </div>
               <p className="text-navy/65 font-body leading-relaxed mb-8 text-[0.95rem]">
                 {product.description}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BUSINESS } from "@/lib/config";
 
 export default function ShippingReturns() {
   return (
@@ -7,9 +6,9 @@ export default function ShippingReturns() {
       <div className="border border-navy/10 rounded-lg p-6 bg-white">
         <h3 className="font-heading text-navy mb-2">Shipping</h3>
         <p className="text-sm text-navy/60 font-body leading-relaxed mb-3">
-          Ships via USPS Priority Mail in discreet, unmarked packaging. Flat rate of $
-          {BUSINESS.shippingFlatRate.toFixed(2)}, USA only. Orders process within 1–2 business
-          days and typically arrive within 3–5 business days.
+          Shipping is included at no additional charge. Ships via USPS Priority Mail in discreet,
+          unmarked packaging. Orders process within 1–2 business days and typically arrive within
+          3–5 business days.
         </p>
         <Link href="/shipping" className="text-teal font-body text-sm font-medium hover:underline">
           Read full Shipping Policy →

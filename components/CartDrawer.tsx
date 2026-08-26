@@ -32,17 +32,18 @@ export default function CartDrawer() {
           ) : (
             <ul className="space-y-4">
               {items.map((item) => (
-                <li key={item.productId} className="flex gap-4 border-b border-teal/10 pb-4">
+                <li key={item.id} className="flex gap-4 border-b border-teal/10 pb-4">
                   <div className="relative h-20 w-20 shrink-0 rounded-md overflow-hidden bg-offwhite border border-teal/10">
                     <Image src={item.image} alt={item.name} fill className="object-contain p-2" />
                   </div>
                   <div className="flex-1">
                     <p className="font-body font-semibold text-navy text-sm">{item.name}</p>
+                    <p className="text-xs text-navy/50 font-body">{item.variantLabel}</p>
                     <p className="text-sm text-navy/60 font-body">${item.price.toFixed(2)}</p>
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         className="h-7 w-7 rounded border border-teal/30 text-navy hover:bg-offwhite"
-                        onClick={() => updateQuantity(item.productId, item.quantity - 1)}
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         aria-label="Decrease quantity"
                       >
                         −
@@ -50,14 +51,14 @@ export default function CartDrawer() {
                       <span className="text-sm font-body w-6 text-center">{item.quantity}</span>
                       <button
                         className="h-7 w-7 rounded border border-teal/30 text-navy hover:bg-offwhite"
-                        onClick={() => updateQuantity(item.productId, item.quantity + 1)}
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         aria-label="Increase quantity"
                       >
                         +
                       </button>
                       <button
                         className="ml-auto text-xs text-navy/50 hover:text-teal font-body"
-                        onClick={() => removeItem(item.productId)}
+                        onClick={() => removeItem(item.id)}
                       >
                         Remove
                       </button>

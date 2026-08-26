@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/lib/supabase";
+import { Product, startingPrice } from "@/lib/supabase";
 
 export default function RelatedProduct({ product }: { product: Product }) {
   return (
@@ -20,7 +20,7 @@ export default function RelatedProduct({ product }: { product: Product }) {
           <h3 className="font-heading text-navy group-hover:text-teal transition-colors">{product.name}</h3>
           <p className="text-sm text-navy/50 font-body truncate">{product.caption}</p>
         </div>
-        <span className="font-body font-semibold text-navy shrink-0">${product.price.toFixed(2)}</span>
+        <span className="font-body font-semibold text-navy shrink-0">From ${startingPrice(product).toFixed(2)}</span>
       </Link>
     </div>
   );

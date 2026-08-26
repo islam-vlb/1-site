@@ -20,7 +20,6 @@ export const BUSINESS = {
   email: "support@nuressaindividualinsight.com",
   descriptor: "nuressaindividualinsig",
   copyrightYear: 2026,
-  shippingFlatRate: 7.95,
 };
 
 export const TEST_KIT_HREF = "/product/at-home-semen-test-kit";

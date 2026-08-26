@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { searchProducts } from "@/lib/supabase";
+import { searchProducts, startingPrice } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -61,7 +61,7 @@ export default async function SearchPage({
                 {product.name}
               </h2>
               <p className="text-sm text-navy/55 font-body mt-1 mb-3">{product.caption}</p>
-              <p className="font-body font-semibold text-navy">${product.price.toFixed(2)}</p>
+              <p className="font-body font-semibold text-navy">From ${startingPrice(product).toFixed(2)}</p>
             </div>
           </Link>
         ))}

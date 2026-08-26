@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import SearchOverlay from "./SearchOverlay";
 import { NAV_LINKS, TEST_KIT_HREF } from "@/lib/config";
 import { useCart } from "@/context/CartContext";
-import { PRODUCTS } from "@/lib/supabase";
+import { PRODUCTS, startingPrice } from "@/lib/supabase";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -109,7 +109,7 @@ export default function Header() {
                                   </p>
                                 </div>
                                 <span className="text-sm font-body font-semibold text-navy shrink-0 ml-2">
-                                  ${product.price.toFixed(2)}
+                                  From ${startingPrice(product).toFixed(2)}
                                 </span>
                               </Link>
                             ))}

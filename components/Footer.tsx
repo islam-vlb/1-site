@@ -18,6 +18,7 @@ export default function Footer() {
             </p>
             <div className="mt-5">
               <PaymentIcons size="h-8" />
+              <p className="mt-2 text-xs text-white/50">We accept Visa and Mastercard.</p>
             </div>
           </div>
 

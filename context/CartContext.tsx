@@ -7,12 +7,15 @@ import {
   useState,
   ReactNode,
 } from "react";
-import { Product } from "@/lib/supabase";
+import { Product, ProductVariant } from "@/lib/supabase";
 
 export type CartItem = {
+  id: string;
   productId: string;
+  variantId: string;
   slug: string;
   name: string;
+  variantLabel: string;
   price: number;
   quantity: number;
   image: string;
@@ -20,9 +23,9 @@ export type CartItem = {
 
 type CartContextType = {
   items: CartItem[];
-  addItem: (product: Product, quantity?: number) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  addItem: (product: Product, variant: ProductVariant, quantity?: number) => void;
+  removeItem: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
   itemCount: number;
   subtotal: number;
@@ -55,23 +58,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [items, hydrated]);
 
-  function addItem(product: Product, quantity = 1) {
+  function addItem(product: Product, variant: ProductVariant, quantity = 1) {
+    const id = `${product.id}-${variant.id}`;
     setItems((prev) => {
-      const existing = prev.find((i) => i.productId === product.id);
+      const existing = prev.find((i) => i.id === id);
       if (existing) {
         return prev.map((i) =>
-          i.productId === product.id
-            ? { ...i, quantity: i.quantity + quantity }
-            : i
+          i.id === id ? { ...i, quantity: i.quantity + quantity } : i
         );
       }
       return [
         ...prev,
         {
+          id,
           productId: product.id,
+          variantId: variant.id,
           slug: product.slug,
           name: product.name,
-          price: product.price,
+          variantLabel: variant.label,
+          price: variant.price,
           quantity,
           image: product.image.src,
         },
@@ -80,17 +85,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setIsDrawerOpen(true);
   }
 
-  function removeItem(productId: string) {
-    setItems((prev) => prev.filter((i) => i.productId !== productId));
+  function removeItem(id: string) {
+    setItems((prev) => prev.filter((i) => i.id !== id));
   }
 
-  function updateQuantity(productId: string, quantity: number) {
+  function updateQuantity(id: string, quantity: number) {
     if (quantity < 1) {
-      removeItem(productId);
+      removeItem(id);
       return;
     }
     setItems((prev) =>
-      prev.map((i) => (i.productId === productId ? { ...i, quantity } : i))
+      prev.map((i) => (i.id === id ? { ...i, quantity } : i))
     );
   }
 

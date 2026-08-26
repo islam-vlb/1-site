@@ -14,7 +14,7 @@ export default function CheckoutPage() {
   const [agreed, setAgreed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const total = subtotal + (items.length > 0 ? BUSINESS.shippingFlatRate : 0);
+  const total = subtotal;
   const hasSupplement = items.some((i) => i.slug === "male-fertility-support");
 
   function handleSubmit(e: React.FormEvent) {
@@ -77,6 +77,7 @@ export default function CheckoutPage() {
             <h2 className="font-heading font-semibold text-navy text-lg mb-4">Payment</h2>
             <div className="mb-4">
               <PaymentIcons size="h-10" />
+              <p className="text-xs text-navy/50 font-body mt-2">We accept Visa and Mastercard.</p>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <input required type="text" inputMode="numeric" placeholder="Card number" className="border border-teal/30 rounded-md px-4 py-3 font-body text-sm sm:col-span-2" />
@@ -132,10 +133,10 @@ export default function CheckoutPage() {
           <h2 className="font-heading font-semibold text-navy text-lg">Order Summary</h2>
           <div className="space-y-3">
             {items.map((item) => (
-              <div key={item.productId}>
-                <div className="flex justify-between font-body text-sm text-navy">
-                  <span>{item.name} × {item.quantity}</span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+              <div key={item.id}>
+                <div className="flex justify-between font-body text-sm text-navy gap-4">
+                  <span>{item.name} — {item.variantLabel} × {item.quantity}</span>
+                  <span className="shrink-0">${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
                 {item.slug === "male-fertility-support" && (
                   <p className="text-xs text-navy/50 font-body mt-1 leading-relaxed">
@@ -153,7 +154,7 @@ export default function CheckoutPage() {
             </div>
             <div className="flex justify-between font-body text-sm text-navy/70">
               <span>Shipping</span>
-              <span>${BUSINESS.shippingFlatRate.toFixed(2)}</span>
+              <span>Included</span>
             </div>
             <div className="flex justify-between font-heading font-bold text-navy text-lg pt-2 border-t border-teal/10">
               <span>Total</span>

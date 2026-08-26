@@ -8,7 +8,7 @@ export default function ShippingPage() {
       <div className="space-y-6 text-navy/70 font-body leading-relaxed">
         <div>
           <h2 className="font-heading font-semibold text-navy text-lg mb-2">Shipping Area</h2>
-          <p>We currently ship to addresses within the United States only.</p>
+          <p>We ship discreetly to all 50 US states and the District of Columbia.</p>
         </div>
         <div>
           <h2 className="font-heading font-semibold text-navy text-lg mb-2">Orders Ship From</h2>
@@ -18,10 +18,10 @@ export default function ShippingPage() {
           </p>
         </div>
         <div>
-          <h2 className="font-heading font-semibold text-navy text-lg mb-2">Shipping Method &amp; Rate</h2>
+          <h2 className="font-heading font-semibold text-navy text-lg mb-2">Shipping Method &amp; Cost</h2>
           <p>
-            All orders ship via USPS Priority Mail at a flat rate of $
-            {BUSINESS.shippingFlatRate.toFixed(2)}, regardless of order size.
+            Shipping is included at no additional charge with every order. All orders ship via
+            USPS Priority Mail.
           </p>
         </div>
         <div>

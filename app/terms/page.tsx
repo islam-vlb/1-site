@@ -21,7 +21,11 @@ export default function TermsPage() {
     {
       heading: "Products Offered",
       body: [
-        `We currently offer two products: the ${kit.name} ($${kit.price.toFixed(2)}) and the ${supplement.name} ($${supplement.price.toFixed(2)}). Product descriptions, features, and prices are subject to change without notice.`,
+        `We currently offer two products, each available in multiple bundle and quantity options: the ${kit.name} and the ${supplement.name}. Product descriptions, features, and prices are subject to change without notice.`,
+        `${kit.name}:`,
+        ...kit.variants.map((v) => `${v.label} — $${v.price.toFixed(2)}`),
+        `${supplement.name}:`,
+        ...supplement.variants.map((v) => `${v.label} — $${v.price.toFixed(2)}`),
       ],
     },
     {
@@ -34,20 +38,20 @@ export default function TermsPage() {
     {
       heading: "Orders and Payment",
       body: [
-        "All orders are subject to acceptance and availability. We accept Visa and Mastercard. By placing an order, you authorize us to charge your payment method for the total order amount, including applicable shipping.",
+        "All orders are subject to acceptance and availability. We accept Visa and Mastercard. By placing an order, you authorize us to charge your payment method for the total order amount.",
         `Charges will appear on your statement as "${BUSINESS.descriptor}."`,
       ],
     },
     {
       heading: "Pricing",
       body: [
-        "All prices are listed in U.S. dollars and do not include applicable shipping fees, which are calculated at checkout.",
+        "All prices are listed in U.S. dollars. Shipping is included at no additional charge.",
       ],
     },
     {
       heading: "Shipping",
       body: [
-        `Orders ship within the United States only via USPS Priority Mail at a flat rate of $${BUSINESS.shippingFlatRate.toFixed(2)}. See our Shipping Policy for full details.`,
+        "Shipping is included at no additional charge with every order. Orders ship via USPS Priority Mail to all 50 US states and the District of Columbia. See our Shipping Policy for full details.",
       ],
     },
     {
