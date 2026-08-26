@@ -12,10 +12,12 @@ const trustItems = [
   { label: "Reliable Delivery", icon: "M13 2L3 14h7l-1 8 11-13h-7l1-7z" },
 ];
 
-export default function PurchasePanel({ product }: { product: Product }) {
+export default function PurchasePanel({ product, selectedVariantId, onVariantChange }: { product: Product, selectedVariantId?: string, onVariantChange?: (id: string) => void }) {
   const { addItem } = useCart();
   const router = useRouter();
-  const [variantId, setVariantId] = useState(getDefaultVariant(product).id);
+  const [internalId, setInternalId] = useState(getDefaultVariant(product).id);
+  const variantId = selectedVariantId ?? internalId;
+  const setVariantId = onVariantChange ?? setInternalId;
 
   const selected = product.variants.find((v) => v.id === variantId) ?? getDefaultVariant(product);
   const groups = product.variantGroups;
@@ -49,7 +51,10 @@ export default function PurchasePanel({ product }: { product: Product }) {
         </span>
         <span className="flex-1 min-w-0">
           <span className="block font-body text-sm font-medium text-navy leading-snug">{variant.label}</span>
-          {variant.meta && (
+          {variant.bundle && (
+            <span className="inline-block mt-1 px-2 py-0.5 bg-teal/10 text-teal text-[0.7rem] font-bold uppercase tracking-wider rounded-full">Bundle Offer</span>
+          )}
+          {variant.meta && !variant.bundle && (
             <span className="block font-body text-xs text-navy/50 mt-0.5">{variant.meta}</span>
           )}
         </span>

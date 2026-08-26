@@ -2,8 +2,12 @@ export type ProductVariant = {
   id: string;
   label: string;
   price: number;
+  image: string;
   meta?: string;
   group?: string;
+  bundle?: boolean;
+  bottleCount?: number;
+  capsuleCount?: number;
 };
 
 export type Product = {
@@ -39,17 +43,17 @@ export const PRODUCTS: Product[] = [
     caption: "A private first look at key fertility indicators, from home.",
     tagline: "Private, At-Home Fertility Insight",
     description:
-      "An at-home semen analysis kit designed to give men a private, convenient first look at key fertility indicators — including sperm concentration and motility — from the comfort of home. Results are available at home and can be shared with a healthcare provider for further guidance. This kit is intended as a wellness indicator and does not replace professional medical diagnosis.",
+      "An at-home semen analysis kit designed to give men a private, convenient first look at key fertility indicators — including sperm concentration and motility — from the comfort of home. The kit arrives in a discreet box with everything needed for at-home collection. Results are available at home and can be shared with a healthcare provider to discuss next steps. This kit is intended as a wellness indicator and does not replace professional medical diagnosis.",
     features: [
       "Private at-home sample collection",
       "Tests key fertility indicators: concentration and motility",
       "Easy-to-follow step-by-step instructions included",
       "Results available at home",
-      "Discreet packaging for shipping and storage",
-      "Results may be shared with your physician for follow-up guidance",
+      "Discreet box packaging for shipping and storage",
+      "Results can be shared with your physician to discuss next steps",
     ],
     whatsIncluded: [
-      "At-home semen collection and testing kit(s)",
+      "At-home semen test kit box with collection and testing supplies",
       "Step-by-step instruction guide",
       "Discreet, unmarked outer packaging",
       "Access to your results at home",
@@ -68,20 +72,19 @@ export const PRODUCTS: Product[] = [
     ],
     defaultVariantId: "1kit-none",
     variantGroups: [
-      { key: "single", label: "Single Kit Options" },
-      { key: "double", label: "Two Kit Options" },
-      { key: "triple", label: "Three Kit Option" },
+      { key: "kit-only", label: "Test Kit Only" },
+      { key: "bundles", label: "Bundle Offers" },
     ],
     variants: [
-      { id: "1kit-none", label: "1 Test Kit", price: 47.89, meta: "No supplement included", group: "single" },
-      { id: "1kit-30", label: "1 Test Kit + 1 bottle (30 tablets)", price: 49.76, group: "single" },
-      { id: "1kit-60", label: "1 Test Kit + 1 bottle (60 tablets)", price: 53.45, group: "single" },
-      { id: "1kit-90", label: "1 Test Kit + 1 bottle (90 tablets)", price: 54.95, group: "single" },
-      { id: "2kit-none", label: "2 Test Kits", price: 86.88, meta: "No supplement included", group: "double" },
-      { id: "2kit-30", label: "2 Test Kits + 1 bottle (30 tablets)", price: 87.64, group: "double" },
-      { id: "2kit-60", label: "2 Test Kits + 1 bottle (60 tablets)", price: 87.76, group: "double" },
-      { id: "2kit-90", label: "2 Test Kits + 1 bottle (90 tablets)", price: 94.82, group: "double" },
-      { id: "3kit-none", label: "3 Test Kits", price: 96.95, meta: "No supplement included", group: "triple" },
+      { id: "1kit-none", label: "1 Test Kit", price: 47.89, image: "/images/products/1kit-open-contents.jpg", meta: "No supplement included", group: "kit-only" },
+      { id: "1kit-30", label: "1 Test Kit + 1 Bottle — 30 Capsules", price: 49.76, image: "/images/products/1kit-30ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 30 },
+      { id: "1kit-60", label: "1 Test Kit + 1 Bottle — 60 Capsules", price: 53.45, image: "/images/products/1kit-60ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 60 },
+      { id: "1kit-90", label: "1 Test Kit + 1 Bottle — 90 Capsules", price: 54.95, image: "/images/products/1kit-90ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 90 },
+      { id: "2kit-none", label: "2 Test Kits", price: 86.88, image: "/images/products/2kit-open-contents.jpg", meta: "No supplement included", group: "kit-only" },
+      { id: "2kit-30", label: "2 Test Kits + 1 Bottle — 30 Capsules", price: 87.64, image: "/images/products/2kit-30ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 30 },
+      { id: "2kit-60", label: "2 Test Kits + 1 Bottle — 60 Capsules", price: 87.76, image: "/images/products/2kit-60ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 60 },
+      { id: "2kit-90", label: "2 Test Kits + 1 Bottle — 90 Capsules", price: 94.82, image: "/images/products/2kit-90ct-bundle.jpg", group: "bundles", bundle: true, bottleCount: 1, capsuleCount: 90 },
+      { id: "3kit-none", label: "3 Test Kits", price: 96.95, image: "/images/products/3kit-boxes.jpg", meta: "No supplement included", group: "kit-only" },
     ],
     image: {
       src: "/images/at-home-semen-test-kit.png",
@@ -123,13 +126,13 @@ export const PRODUCTS: Product[] = [
     ],
     defaultVariantId: "1x60",
     variants: [
-      { id: "1x30", label: "1 bottle — 30 tablets", price: 9.99, meta: "30 tablets total" },
-      { id: "1x60", label: "1 bottle — 60 tablets", price: 13.95, meta: "60 tablets total" },
-      { id: "1x90", label: "1 bottle — 90 tablets", price: 14.75, meta: "90 tablets total" },
-      { id: "1x120", label: "1 bottle — 120 tablets", price: 17.95, meta: "120 tablets total" },
-      { id: "2x60", label: "2 bottles — 60 tablets per bottle", price: 18.75, meta: "120 tablets total" },
-      { id: "3x60", label: "3 bottles — 60 tablets per bottle", price: 28.76, meta: "180 tablets total" },
-      { id: "4x60", label: "4 bottles — 60 tablets per bottle", price: 38.64, meta: "240 tablets total" },
+      { id: "1x30", label: "1 Bottle — 30 Capsules", price: 9.99, image: "/images/supplements/1-bottle-30ct.jpg", bottleCount: 1, capsuleCount: 30 },
+      { id: "1x60", label: "1 Bottle — 60 Capsules", price: 13.95, image: "/images/supplements/1-bottle-60ct.jpg", bottleCount: 1, capsuleCount: 60 },
+      { id: "1x90", label: "1 Bottle — 90 Capsules", price: 14.75, image: "/images/supplements/1-bottle-90ct.jpg", bottleCount: 1, capsuleCount: 90 },
+      { id: "1x120", label: "1 Bottle — 120 Capsules", price: 17.95, image: "/images/supplements/1-bottle-120ct.jpg", bottleCount: 1, capsuleCount: 120 },
+      { id: "2x60", label: "2 Bottles — 120 Capsules", price: 18.75, image: "/images/supplements/2-bottles-60ct.jpg", bottleCount: 2, capsuleCount: 120 },
+      { id: "3x60", label: "3 Bottles — 180 Capsules", price: 28.76, image: "/images/supplements/3-bottles-60ct.jpg", bottleCount: 3, capsuleCount: 180 },
+      { id: "4x60", label: "4 Bottles — 240 Capsules", price: 38.64, image: "/images/supplements/4-bottles-60ct.jpg", bottleCount: 4, capsuleCount: 240 },
     ],
     image: {
       src: "/images/male-fertility-support.png",

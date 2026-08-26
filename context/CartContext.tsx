@@ -78,7 +78,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           variantLabel: variant.label,
           price: variant.price,
           quantity,
-          image: product.image.src,
+          image: variant.image || product.image.src,
         },
       ];
     });

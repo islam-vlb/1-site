@@ -1,8 +1,7 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { PRODUCTS } from "@/lib/supabase";
 import Breadcrumb from "@/components/Breadcrumb";
-import PurchasePanel from "@/components/PurchasePanel";
+import ProductImageSelector from "@/components/ProductImageSelector";
 import Highlights from "@/components/product/Highlights";
 import ShippingReturns from "@/components/product/ShippingReturns";
 import TrustSection from "@/components/product/TrustSection";
@@ -34,7 +33,7 @@ const faqItems = [
     },
   {
     q: "Can I share results with my doctor?",
-    a: "Yes. Your results can be shared with a healthcare provider for further guidance and follow-up.",
+    a: "Yes. Your results can be shared with a healthcare provider to discuss next steps.",
   },
   {
     q: "What's your return policy?",
@@ -57,25 +56,7 @@ export default function TestKitPage() {
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-14">
-          <div className="relative aspect-square rounded-2xl overflow-hidden bg-white border border-navy/10 shadow-sm">
-            <Image
-              src={product.image.src}
-              alt={product.image.alt}
-              fill
-              priority
-              className="object-contain p-10"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-3">
-              {product.category}
-            </p>
-            <h1 className="font-heading text-3xl sm:text-4xl text-navy leading-tight mb-3">
-              {product.name}
-            </h1>
-            <p className="text-navy/55 font-body mb-5">{product.caption}</p>
-            <PurchasePanel product={product} />
-          </div>
+          <ProductImageSelector product={product} />
         </div>
       </section>
 
