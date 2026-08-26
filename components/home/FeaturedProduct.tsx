@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS, startingPrice } from "@/lib/supabase";
+import { PRODUCTS, startingPrice, getDefaultVariant } from "@/lib/supabase";
 import AddToCartButton from "@/components/AddToCartButton";
 import Reveal from "@/components/Reveal";
 
 const product = PRODUCTS[0];
+const defaultVariant = getDefaultVariant(product);
 
 export default function FeaturedProduct() {
   return (
@@ -21,10 +22,10 @@ export default function FeaturedProduct() {
           <div className="grid lg:grid-cols-2 gap-0 rounded-[1.75rem] overflow-hidden border border-navy/10 bg-white shadow-xl hover:shadow-2xl transition-shadow duration-500">
             <div className="relative aspect-square lg:aspect-auto bg-grad-teal">
               <Image
-                src={product.image.src}
-                alt={product.image.alt}
+                src={defaultVariant.image}
+                alt={defaultVariant.label}
                 fill
-                className="object-contain p-12 lg:p-16"
+                className="object-cover"
               />
             </div>
             <div className="p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
