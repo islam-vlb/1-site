@@ -10,9 +10,9 @@ import Faq from "@/components/Faq";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "At-Home Semen Test Kit",
+  title: "Basal Body Thermometer",
   description:
-    "A private, at-home semen analysis kit for a first look at key fertility indicators — concentration and motility — from home.",
+    "A precision digital basal body thermometer for tracking morning temperature changes as part of a natural cycle-awareness routine.",
 };
 
 const product = PRODUCTS[0];
@@ -20,20 +20,24 @@ const supplement = PRODUCTS[1];
 
 const faqItems = [
   {
-    q: "Is this diagnostic?",
-    a: "No. This kit is intended as a wellness indicator to give you a private first look at key fertility indicators. It does not replace a professional medical diagnosis.",
+    q: "How accurate are the readings?",
+    a: "The device uses a high-precision sensor that detects temperature changes to 1/100th of a degree, giving you a consistent, precise reading each morning.",
   },
   {
-    q: "How private is this?",
-    a: "Your kit ships in discreet packaging with no identifying labels, and your results are only visible to you.",
+    q: "When should I take my temperature?",
+    a: "For the most consistent results, take your temperature each morning before rising, at roughly the same time each day, before eating, drinking, or getting out of bed.",
   },
-    {
-      q: "How do I get my results?",
-      a: "Results are available at home.",
-    },
   {
-    q: "Can I share results with my doctor?",
-    a: "Yes. Your results can be shared with a healthcare provider to discuss next steps.",
+    q: "How long does a reading take?",
+    a: "A full reading takes approximately 60 seconds. The device also recalls your last reading so you can quickly compare day to day.",
+  },
+  {
+    q: "Is this a substitute for professional fertility testing?",
+    a: "No. This is a temperature-tracking device only — it does not test, diagnose, or analyze any biological sample. It's intended to help you observe general patterns over time, not to replace professional medical advice or testing.",
+  },
+  {
+    q: "How long does the battery last?",
+    a: "The included battery is designed for extended daily use. The device ships with the battery already installed and ready to go.",
   },
   {
     q: "What's your return policy?",
@@ -41,14 +45,14 @@ const faqItems = [
   },
 ];
 
-export default function TestKitPage() {
+export default function ThermometerPage() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
-            { label: "Test Kit", href: "/product/at-home-semen-test-kit" },
+            { label: "Thermometer", href: "/product/basal-body-thermometer" },
             { label: product.name },
           ]}
         />
@@ -95,8 +99,9 @@ export default function TestKitPage() {
           <Reveal>
             <h2 className="font-heading text-2xl text-navy mb-4">How It Works</h2>
             <p className="text-navy/65 font-body leading-relaxed">
-              The At-Home Semen Test Kit includes easy-to-follow, step-by-step instructions for the
-              at-home collection process. Complete the process in the comfort of your own space.
+              Each morning before rising, place the sensor tip under your tongue and hold until it
+              signals a completed reading in about 60 seconds. Log the number, then use the
+              device&apos;s memory recall to compare it with your previous reading over time.
             </p>
           </Reveal>
 

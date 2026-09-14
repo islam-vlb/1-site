@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TEST_KIT_HREF } from "@/lib/config";
+import { THERMOMETER_HREF } from "@/lib/config";
 import Reveal from "@/components/Reveal";
 
 const features = [
   "Private at-home experience",
-  "Clear testing guidance",
+  "Clear daily tracking guidance",
   "Designed around convenience",
 ];
 
@@ -18,7 +18,7 @@ export default function BuiltAroundBetterInfo() {
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-navy/10 shadow-xl">
               <Image
                 src="/images/diagnostic-test.jpg"
-                alt="Diagnostic test tube analysis"
+                alt="Basal body thermometer used for daily temperature tracking"
                 fill
                 className="object-cover"
               />
@@ -34,9 +34,9 @@ export default function BuiltAroundBetterInfo() {
               Built Around Better Information
             </h2>
             <p className="text-navy/60 font-body leading-relaxed text-lg mb-8">
-              We designed the At-Home Semen Test Kit to give you a private, convenient first look at
-              key fertility indicators — without requiring a clinic visit. Easy-to-follow guidance,
-              discreet packaging, and results available at home.
+              We designed the Basal Body Thermometer to give you a private, convenient way to track
+              your body&apos;s natural patterns — without requiring a clinic visit. Easy-to-follow
+              guidance, discreet packaging, and a reading you can view at home in seconds.
             </p>
             <ul className="space-y-4 mb-10">
               {features.map((f) => (
@@ -51,10 +51,10 @@ export default function BuiltAroundBetterInfo() {
               ))}
             </ul>
             <Link
-              href={TEST_KIT_HREF}
+              href={THERMOMETER_HREF}
               className="group relative inline-flex bg-navy text-white font-body font-semibold text-sm tracking-wide uppercase rounded-full px-8 py-4 hover:bg-teal transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
-              <span className="relative z-10">Explore the Test Kit</span>
+              <span className="relative z-10">Explore the Thermometer</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal to-teal-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </Reveal>

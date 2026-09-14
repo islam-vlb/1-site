@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import SearchOverlay from "./SearchOverlay";
-import { NAV_LINKS, TEST_KIT_HREF } from "@/lib/config";
+import { NAV_LINKS, THERMOMETER_HREF } from "@/lib/config";
 import { useCart } from "@/context/CartContext";
 import { PRODUCTS, startingPrice } from "@/lib/supabase";
 
@@ -116,7 +116,7 @@ export default function Header() {
                           </div>
                           <div className="border-t border-navy/8 p-3">
                             <Link
-                              href="/product/at-home-semen-test-kit"
+                              href="/product/basal-body-thermometer"
                               onClick={() => setProductsOpen(false)}
                               className="flex items-center justify-center w-full bg-navy text-white font-body text-xs font-semibold tracking-wide uppercase rounded-xl py-3 hover:bg-teal transition-colors duration-200"
                             >
@@ -171,10 +171,10 @@ export default function Header() {
             </button>
 
             <Link
-              href={TEST_KIT_HREF}
+              href={THERMOMETER_HREF}
               className="hidden md:inline-flex ml-1 bg-navy text-white font-body text-xs font-semibold tracking-wide uppercase rounded-full px-5 py-2.5 hover:bg-teal transition-colors duration-200 shadow-sm hover:shadow-md"
             >
-              Explore Test Kit
+              Explore Thermometer
             </Link>
 
             <button
@@ -259,11 +259,11 @@ export default function Header() {
                   )
                 )}
                 <Link
-                  href={TEST_KIT_HREF}
+                  href={THERMOMETER_HREF}
                   className="mt-4 inline-flex bg-navy text-white font-body text-xs font-semibold tracking-wide uppercase rounded-full px-6 py-3 hover:bg-teal transition-colors duration-200"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Explore Test Kit
+                  Explore Thermometer
                 </Link>
               </div>
             </motion.div>

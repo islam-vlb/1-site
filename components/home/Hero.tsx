@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { TEST_KIT_HREF } from "@/lib/config";
+import { THERMOMETER_HREF } from "@/lib/config";
 
 export default function Hero() {
   return (
@@ -41,10 +41,10 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
-                href={TEST_KIT_HREF}
+                href={THERMOMETER_HREF}
                 className="group relative bg-navy text-white font-body font-semibold text-sm tracking-wide uppercase rounded-full px-8 py-4 hover:bg-teal transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                <span className="relative z-10">Explore the Test Kit</span>
+                <span className="relative z-10">Explore the Thermometer</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal to-teal-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <a
@@ -68,7 +68,7 @@ export default function Hero() {
             <div className="relative h-full w-full rounded-[2rem] overflow-hidden border border-navy/10 shadow-2xl">
               <Image
                 src="/images/hero-medical.jpg"
-                alt="Modern laboratory diagnostic equipment"
+                alt="Basal body thermometer for daily cycle tracking"
                 fill
                 priority
                 className="object-cover"

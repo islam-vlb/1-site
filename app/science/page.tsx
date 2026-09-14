@@ -4,17 +4,17 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "The Science",
-  description: "General information on the fertility indicators our At-Home Semen Test Kit looks at.",
+  description: "General information on basal body temperature tracking and what our thermometer measures.",
 };
 
 const indicators = [
   {
-    title: "Concentration",
-    desc: "A general term referring to how many sperm are present in a sample. It is one of several factors commonly discussed in conversations about male fertility.",
+    title: "Basal Body Temperature",
+    desc: "Your body's temperature at rest, typically measured first thing in the morning before any activity. It is one of several factors commonly discussed in conversations about cycle awareness.",
   },
   {
-    title: "Motility",
-    desc: "A general term referring to the movement of sperm. It is another factor commonly discussed alongside concentration in fertility-related conversations.",
+    title: "Temperature Trends",
+    desc: "Tracking your readings over time can help you observe general patterns in your body's natural rhythm. It is another factor commonly discussed alongside daily tracking routines.",
   },
 ];
 
@@ -25,12 +25,12 @@ export default function SciencePage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
           <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-4">The Science</p>
           <h1 className="font-heading text-3xl sm:text-4xl text-navy leading-tight text-balance mb-5">
-            What the At-Home Semen Test Kit Looks At
+            What the Basal Body Thermometer Tracks
           </h1>
           <p className="text-navy/60 font-body leading-relaxed max-w-2xl">
-            Our At-Home Semen Test Kit gives you a private, at-home first look at two commonly
-            discussed fertility indicators: concentration and motility. This page explains, in
-            plain terms, what those indicators generally refer to.
+            Our Basal Body Thermometer gives you a private, at-home way to track your morning
+            temperature over time. This page explains, in plain terms, what basal body temperature
+            generally refers to.
           </p>
         </div>
       </section>
@@ -49,15 +49,16 @@ export default function SciencePage() {
 
         <Reveal>
           <div className="bg-offwhite border border-navy/10 rounded-lg p-7">
-            <h2 className="font-heading text-lg text-navy mb-3">A Wellness Indicator, Not a Diagnosis</h2>
+            <h2 className="font-heading text-lg text-navy mb-3">A Tracking Tool, Not a Diagnosis</h2>
             <p className="text-sm text-navy/65 font-body leading-relaxed mb-3">
-              The At-Home Semen Test Kit is intended for general wellness and informational
-              purposes. It is not a substitute for professional medical advice, diagnosis, or
-              treatment. Always consult a qualified healthcare provider regarding any health
+              The Basal Body Thermometer is intended for general wellness and informational
+              purposes. It measures temperature only and does not test, diagnose, or analyze any
+              biological sample. It is not a substitute for professional medical advice, diagnosis,
+              or treatment. Always consult a qualified healthcare provider regarding any health
               concerns or before making decisions related to fertility or reproductive health.
             </p>
-            <Link href="/product/at-home-semen-test-kit" className="text-teal font-body text-sm font-medium hover:underline">
-              Learn more about the Test Kit →
+            <Link href="/product/basal-body-thermometer" className="text-teal font-body text-sm font-medium hover:underline">
+              Learn more about the Thermometer →
             </Link>
           </div>
         </Reveal>

@@ -22,7 +22,7 @@ export const BUSINESS = {
   copyrightYear: 2026,
 };
 
-export const TEST_KIT_HREF = "/product/at-home-semen-test-kit";
+export const THERMOMETER_HREF = "/product/basal-body-thermometer";
 export const SUPPLEMENT_HREF = "/product/male-fertility-support";
 
 export const NAV_LINKS = [
@@ -35,7 +35,7 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Test Kit", href: TEST_KIT_HREF },
+  { label: "Thermometer", href: THERMOMETER_HREF },
   { label: "Wellness Supplement", href: SUPPLEMENT_HREF },
   { label: "Science", href: "/science" },
   { label: "Ingredients", href: "/ingredients" },

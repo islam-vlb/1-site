@@ -35,8 +35,8 @@ export default async function SearchPage({
             No products matched your search. Try a different term, or browse our two products directly.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/product/at-home-semen-test-kit" className="text-teal font-body font-medium hover:underline">
-              At-Home Semen Test Kit
+            <Link href="/product/basal-body-thermometer" className="text-teal font-body font-medium hover:underline">
+              Basal Body Thermometer
             </Link>
             <Link href="/product/male-fertility-support" className="text-teal font-body font-medium hover:underline">
               Male Fertility Support Formula

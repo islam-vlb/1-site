@@ -16,7 +16,7 @@ export default function CartPage() {
           href="/"
           className="inline-block bg-navy text-white font-body font-semibold rounded-md py-3 px-8 hover:bg-teal transition-colors"
         >
-          Shop At-Home Test Kit
+          Shop Basal Body Thermometer
         </Link>
       </div>
     );

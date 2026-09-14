@@ -10,10 +10,10 @@ export default function AboutPage() {
           private, accessible at-home wellness products available directly to consumers.
         </p>
         <p>
-          We believe that taking a first step toward understanding your fertility health
-          shouldn&apos;t require an immediate clinic visit. Our At-Home Semen Test Kit and Male
-          Fertility Support Formula are designed to give men a private, convenient way to start
-          that process from home.
+          We believe that taking a first step toward understanding your body&apos;s natural
+          patterns shouldn&apos;t require an immediate clinic visit. Our Basal Body Thermometer and
+          Male Fertility Support Formula are designed to give men a private, convenient way to
+          start that process from home.
         </p>
         <p>
           Our products are intended for general wellness and informational purposes and are not

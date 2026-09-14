@@ -14,7 +14,7 @@ export default function FeaturedProduct() {
         <Reveal className="max-w-2xl mb-14">
           <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-5 font-semibold">Flagship Product</p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.5rem] text-navy leading-[1.15] text-balance">
-            The At-Home Semen Test Kit
+            The Basal Body Thermometer
           </h2>
         </Reveal>
 

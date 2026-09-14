@@ -21,8 +21,8 @@ const faqItems = [
     a: "Take one capsule per day as part of your daily routine, or as directed by your physician.",
   },
   {
-    q: "Can I take this alongside the At-Home Semen Test Kit?",
-    a: "Yes. Many customers use the Test Kit to get a first look at fertility indicators and this formula as daily nutritional support.",
+    q: "Can I take this alongside the Basal Body Thermometer?",
+    a: "Yes. Many customers use the thermometer to track their daily cycle patterns and this formula as daily nutritional support.",
   },
   {
     q: "Is this FDA approved?",

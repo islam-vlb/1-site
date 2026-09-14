@@ -13,10 +13,10 @@ export default function HowItWorks() {
         <Reveal className="max-w-3xl">
           <p className="text-xs font-body uppercase tracking-[0.2em] text-teal mb-4">Process</p>
           <h2 className="font-heading text-3xl sm:text-4xl text-navy leading-tight text-balance mb-6">
-            Your At-Home Semen Test Kit, Made Simple
+            Your Basal Body Thermometer, Made Simple
           </h2>
           <p className="text-navy/60 font-body leading-relaxed text-lg">
-            Simple testing. Convenient results. All from the comfort of home.
+            Simple daily readings. Clear tracking. All from the comfort of home.
           </p>
         </Reveal>
 
@@ -24,18 +24,18 @@ export default function HowItWorks() {
           {[
             {
               number: "1",
-              title: "Order & Receive Your Test Kit",
-              description: "Order the At-Home Semen Test Kit and receive everything you need in discreet packaging.",
+              title: "Order & Receive Your Thermometer",
+              description: "Order the Basal Body Thermometer and receive everything you need in discreet packaging.",
             },
             {
               number: "2",
-              title: "Test at Home",
-              description: "Follow the simple instructions to complete your at-home semen sample collection in your own space.",
+              title: "Take Your Reading",
+              description: "Each morning before rising, take your temperature to build a clear picture of your natural patterns.",
             },
             {
               number: "3",
-              title: "Get Your Results at Home",
-              description: "Complete the included steps and review your informational results at home when they are ready.",
+              title: "Get Your Reading Instantly",
+              description: "View your result on the device display in about 60 seconds and log it to track your trends over time.",
             },
           ].map((step) => (
             <Reveal key={step.number} className="border-t-2 border-teal pt-6">
