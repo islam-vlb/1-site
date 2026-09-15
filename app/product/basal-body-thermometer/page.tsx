@@ -100,7 +100,7 @@ export default function ThermometerPage() {
             <h2 className="font-heading text-2xl text-navy mb-4">How It Works</h2>
             <p className="text-navy/65 font-body leading-relaxed">
               Each morning before rising, place the sensor tip under your tongue and hold until it
-              signals a completed reading in about 60 seconds. Log the number, then use the
+              signals a completed reading in about 60 seconds. Record the number, then use the
               device&apos;s memory recall to compare it with your previous reading over time.
             </p>
           </Reveal>

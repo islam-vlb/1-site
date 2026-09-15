@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     caption: "A precise daily reading to help you track your body's natural patterns.",
     tagline: "Simple, At-Home Cycle Awareness",
     description:
-      "A precision digital thermometer designed to track subtle basal body temperature changes as part of a natural cycle-awareness routine. Take your temperature each morning before rising and log the readings to observe your body's natural patterns over time. This device measures temperature only — it does not test, analyze, or process any biological sample.",
+      "A precision digital thermometer designed to track subtle basal body temperature changes as part of a natural cycle-awareness routine. Take your temperature each morning before rising and record the readings to observe your body's natural patterns over time. This device measures temperature only — it does not test, analyze, or process any biological sample.",
     features: [
       "High-precision sensor detects temperature changes to 1/100th of a degree",
       "Fast reading in approximately 60 seconds",
