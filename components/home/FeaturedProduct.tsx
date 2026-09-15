@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS, startingPrice, getDefaultVariant } from "@/lib/supabase";
-import AddToCartButton from "@/components/AddToCartButton";
 import Reveal from "@/components/Reveal";
 
 const product = PRODUCTS[0];
@@ -55,9 +54,12 @@ export default function FeaturedProduct() {
                 >
                   View Product
                 </Link>
-                <div className="flex-1">
-                  <AddToCartButton product={product} label="Add to Cart" />
-                </div>
+                <Link
+                  href={product.href}
+                  className="flex-1 text-center bg-navy text-white font-body font-semibold text-sm tracking-wide uppercase rounded-full px-7 py-3.5 hover:bg-teal transition-all duration-300"
+                >
+                  View Pricing Options
+                </Link>
               </div>
             </div>
           </div>
