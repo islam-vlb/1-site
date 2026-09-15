@@ -67,8 +67,8 @@ export default function Hero() {
           >
             <div className="relative h-full w-full rounded-[2rem] overflow-hidden border border-navy/10 shadow-2xl">
               <Image
-                src="/images/hero-medical.jpg"
-                alt="Basal body thermometer for daily cycle tracking"
+                src="/images/hero-thermometer.jpg"
+                alt="Basal Body Thermometer with fertility awareness device label"
                 fill
                 priority
                 className="object-cover"

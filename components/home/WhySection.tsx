@@ -43,8 +43,8 @@ export default function WhySection() {
           <Reveal delay={0.1} className="relative">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-navy/10 shadow-xl">
               <Image
-                src="/images/lab-microscope.jpg"
-                alt="Simple daily temperature tracking routine"
+                src="/images/thermometer-trio.jpg"
+                alt="Basal Body Thermometer devices for daily temperature tracking"
                 fill
                 className="object-cover"
               />
