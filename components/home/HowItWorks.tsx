@@ -35,7 +35,7 @@ export default function HowItWorks() {
             {
               number: "3",
               title: "Get Your Reading Instantly",
-              description: "View your result on the device display in about 60 seconds and log it to track your trends over time.",
+              description: "View your result on the device display in about 60 seconds and keep a record to monitor your trends over time.",
             },
           ].map((step) => (
             <Reveal key={step.number} className="border-t-2 border-teal pt-6">
