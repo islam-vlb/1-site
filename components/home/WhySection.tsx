@@ -9,7 +9,7 @@ const items = [
   },
   {
     title: "Simple",
-    desc: "Clear, straightforward testing guidance.",
+    desc: "Clear, straightforward daily guidance.",
     icon: "M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11",
   },
   {
@@ -44,7 +44,7 @@ export default function WhySection() {
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-navy/10 shadow-xl">
               <Image
                 src="/images/lab-microscope.jpg"
-                alt="Laboratory microscope equipment"
+                alt="Simple daily temperature tracking routine"
                 fill
                 className="object-cover"
               />
