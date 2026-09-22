@@ -23,7 +23,6 @@ export const BUSINESS = {
 };
 
 export const THERMOMETER_HREF = "/product/basal-body-thermometer";
-export const SUPPLEMENT_HREF = "/product/male-fertility-support";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -36,9 +35,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
   { label: "Thermometer", href: THERMOMETER_HREF },
-  { label: "Wellness Supplement", href: SUPPLEMENT_HREF },
   { label: "Science", href: "/science" },
-  { label: "Ingredients", href: "/ingredients" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Terms & Conditions", href: "/terms" },

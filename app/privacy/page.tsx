@@ -3,13 +3,13 @@ import { BUSINESS } from "@/lib/config";
 import { PRODUCTS } from "@/lib/supabase";
 
 export default function PrivacyPage() {
-  const [kit, supplement] = PRODUCTS;
+  const [kit] = PRODUCTS;
 
   const sections = [
     {
       heading: "Introduction",
       body: [
-        `This Privacy Policy explains how ${BUSINESS.legalName}, operator of ${BUSINESS.storeName}, collects, uses, and protects your personal information when you shop for our products, including the ${kit.name} and ${supplement.name}.`,
+        `This Privacy Policy explains how ${BUSINESS.legalName}, operator of ${BUSINESS.storeName}, collects, uses, and protects your personal information when you shop for our products, including the ${kit.name}.`,
       ],
     },
     {

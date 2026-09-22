@@ -91,7 +91,7 @@ export default function SearchOverlay({
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
                   type="text"
-                  placeholder="Search products, categories, ingredients..."
+                  placeholder="Search products, categories..."
                   className="flex-1 bg-transparent outline-none font-body text-navy placeholder:text-navy/35 text-base"
                 />
                 <button

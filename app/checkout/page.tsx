@@ -15,7 +15,6 @@ export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const total = subtotal;
-  const hasSupplement = items.some((i) => i.slug === "male-fertility-support");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -138,12 +137,6 @@ export default function CheckoutPage() {
                   <span>{item.name} — {item.variantLabel} × {item.quantity}</span>
                   <span className="shrink-0">${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
-                {item.slug === "male-fertility-support" && (
-                  <p className="text-xs text-navy/50 font-body mt-1 leading-relaxed">
-                    These statements have not been evaluated by the FDA. This product is not
-                    intended to diagnose, treat, cure, or prevent any disease.
-                  </p>
-                )}
               </div>
             ))}
           </div>
@@ -161,12 +154,6 @@ export default function CheckoutPage() {
               <span>${total.toFixed(2)}</span>
             </div>
           </div>
-          {hasSupplement && (
-            <p className="text-xs text-navy/50 font-body leading-relaxed border-t border-teal/10 pt-4">
-              Individual results may vary. Consult your physician before beginning any new
-              supplement.
-            </p>
-          )}
         </aside>
       </form>
     </div>

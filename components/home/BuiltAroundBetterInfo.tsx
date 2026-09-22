@@ -17,8 +17,8 @@ export default function BuiltAroundBetterInfo() {
           <Reveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-navy/10 shadow-xl">
               <Image
-                src="/images/thermometer-lifestyle.jpg"
-                alt="Basal Body Thermometer with Male Fertility Support Formula bottle"
+                src="/images/thermometer-trio.jpg"
+                alt="Basal Body Thermometer devices for daily temperature tracking"
                 fill
                 className="object-cover"
               />

@@ -3,7 +3,7 @@ import { BUSINESS } from "@/lib/config";
 import { PRODUCTS } from "@/lib/supabase";
 
 export default function TermsPage() {
-  const [kit, supplement] = PRODUCTS;
+  const [kit] = PRODUCTS;
 
   const sections = [
     {
@@ -21,18 +21,15 @@ export default function TermsPage() {
     {
       heading: "Products Offered",
       body: [
-        `We currently offer two products, each available in multiple bundle and quantity options: the ${kit.name} and the ${supplement.name}. Product descriptions, features, and prices are subject to change without notice.`,
+        `We currently offer the ${kit.name}, available in multiple bundle and quantity options. Product descriptions, features, and prices are subject to change without notice.`,
         `${kit.name}:`,
         ...kit.variants.map((v) => `${v.label} — $${v.price.toFixed(2)}`),
-        `${supplement.name}:`,
-        ...supplement.variants.map((v) => `${v.label} — $${v.price.toFixed(2)}`),
       ],
     },
     {
       heading: "Intended Use",
       body: [
         `The ${kit.name} is intended for general wellness and informational purposes and is not a substitute for professional medical advice, diagnosis, or treatment.`,
-        `The ${supplement.name} is a dietary supplement. Statements about this product have not been evaluated by the Food and Drug Administration, and it is not intended to diagnose, treat, cure, or prevent any disease.`,
       ],
     },
     {

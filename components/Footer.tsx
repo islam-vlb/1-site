@@ -81,10 +81,6 @@ export default function Footer() {
           <p className="text-sm font-bold text-red-400">
             Individuals under 18 are not permitted to purchase.
           </p>
-          <p className="text-xs text-white/50 leading-relaxed">
-            These statements have not been evaluated by the FDA. Products are not intended to
-            diagnose, treat, cure, or prevent any disease.
-          </p>
           <p className="text-xs text-white/50 pt-2">
             © {BUSINESS.copyrightYear} {BUSINESS.legalName} — {BUSINESS.storeName}. All rights
             reserved.

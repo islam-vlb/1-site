@@ -8,7 +8,7 @@ import BuiltAroundBetterInfo from "@/components/home/BuiltAroundBetterInfo";
 export const metadata: Metadata = {
   title: "Private, At-Home Fertility Wellness",
   description:
-    "NuressaIndividualInsight offers a private, at-home basal body thermometer and supporting wellness products for men.",
+    "NuressaIndividualInsight offers a private, at-home basal body thermometer for daily cycle-awareness tracking.",
 };
 
 export default function HomePage() {
