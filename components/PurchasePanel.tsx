@@ -51,6 +51,12 @@ export default function PurchasePanel({ product, selectedVariantId, onVariantCha
         </span>
         <span className="flex-1 min-w-0">
           <span className="block font-body text-sm font-medium text-navy leading-snug">{variant.label}</span>
+          {variant.bundle && (
+            <span className="inline-block mt-1 px-2 py-0.5 bg-teal/10 text-teal text-[0.7rem] font-bold uppercase tracking-wider rounded-full">Bundle</span>
+          )}
+          {variant.meta && (
+            <span className="block font-body text-xs text-navy/50 mt-0.5">{variant.meta}</span>
+          )}
         </span>
         <span className="font-heading text-navy font-semibold shrink-0">${variant.price.toFixed(2)}</span>
       </button>
