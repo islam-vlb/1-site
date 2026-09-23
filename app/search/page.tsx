@@ -32,11 +32,14 @@ export default async function SearchPage({
       {q && results.length === 0 && (
         <div className="border border-navy/10 rounded-lg p-10 text-center">
           <p className="text-navy/60 font-body mb-4">
-            No products matched your search. Try a different term, or browse our product directly.
+            No products matched your search. Try a different term, or browse our two products directly.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/product/basal-body-thermometer" className="text-teal font-body font-medium hover:underline">
               Basal Body Thermometer
+            </Link>
+            <Link href="/product/male-fertility-support" className="text-teal font-body font-medium hover:underline">
+              Fertility Tracking Journal & BBT Charting Kit
             </Link>
           </div>
         </div>

@@ -10,34 +10,26 @@ import Faq from "@/components/Faq";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Basal Body Thermometer",
+  title: "Fertility Tracking Journal & BBT Charting Kit",
   description:
-    "A precision digital basal body thermometer for tracking morning temperature changes as part of a natural cycle-awareness routine.",
+    "A dedicated paper journal for charting your daily basal body temperature and cycle notes.",
 };
 
-const product = PRODUCTS[0];
-const accessory = PRODUCTS[1];
+const product = PRODUCTS[1];
+const thermometer = PRODUCTS[0];
 
 const faqItems = [
   {
-    q: "How accurate are the readings?",
-    a: "The device uses a high-precision sensor that detects temperature changes to 1/100th of a degree, giving you a consistent, precise reading each morning.",
+    q: "How do I use the journal?",
+    a: "Each page gives you space to record your basal body temperature reading and any notes for the day, with month-at-a-glance charting pages to spot patterns over time.",
   },
   {
-    q: "When should I take my temperature?",
-    a: "For the most consistent results, take your temperature each morning before rising, at roughly the same time each day, before eating, drinking, or getting out of bed.",
+    q: "Do I need the thermometer to use this?",
+    a: "The journal is designed to pair with daily basal body temperature readings, such as those from our Basal Body Thermometer, but it can be used with any thermometer or tracking method you prefer.",
   },
   {
-    q: "How long does a reading take?",
-    a: "A full reading takes approximately 60 seconds. The device also recalls your last reading so you can quickly compare day to day.",
-  },
-  {
-    q: "Is this a substitute for professional fertility testing?",
-    a: "No. This is a temperature-tracking device only — it does not test, diagnose, or analyze any biological sample. It's intended to help you observe general patterns over time, not to replace professional medical advice or testing.",
-  },
-  {
-    q: "How long does the battery last?",
-    a: "The included battery is designed for extended daily use. The device ships with the battery already installed and ready to go.",
+    q: "How many days does one journal cover?",
+    a: "Each journal includes a 12-month charting layout, giving you plenty of room to track a full year of daily readings.",
   },
   {
     q: "What's your return policy?",
@@ -45,14 +37,14 @@ const faqItems = [
   },
 ];
 
-export default function ThermometerPage() {
+export default function AccessoryPage() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
-            { label: "Thermometer", href: "/product/basal-body-thermometer" },
+            { label: "Charting Journal", href: "/product/male-fertility-support" },
             { label: product.name },
           ]}
         />
@@ -97,15 +89,6 @@ export default function ThermometerPage() {
           </Reveal>
 
           <Reveal>
-            <h2 className="font-heading text-2xl text-navy mb-4">How It Works</h2>
-            <p className="text-navy/65 font-body leading-relaxed">
-              Each morning before rising, place the sensor tip under your tongue and hold until it
-              signals a completed reading in about 60 seconds. Record the number, then use the
-              device&apos;s memory recall to compare it with your previous reading over time.
-            </p>
-          </Reveal>
-
-          <Reveal>
             <div className="bg-offwhite border border-navy/10 rounded-lg p-6">
               <h3 className="font-heading text-navy mb-2 text-sm uppercase tracking-wide">
                 Important Information
@@ -140,7 +123,7 @@ export default function ThermometerPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
-        <RelatedProduct product={accessory} />
+        <RelatedProduct product={thermometer} />
       </section>
     </div>
   );

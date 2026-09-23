@@ -11,8 +11,9 @@ export default function AboutPage() {
         </p>
         <p>
           We believe that taking a first step toward understanding your body&apos;s natural
-          patterns shouldn&apos;t require an immediate clinic visit. Our Basal Body Thermometer is
-          designed to give you a private, convenient way to start that process from home.
+          patterns shouldn&apos;t require an immediate clinic visit. Our Basal Body Thermometer and
+          Fertility Tracking Journal & BBT Charting Kit are designed to give you a private,
+          convenient way to start that process from home.
         </p>
         <p>
           Our products are intended for general wellness and informational purposes and are not
