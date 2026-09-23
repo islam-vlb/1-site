@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PRODUCTS } from "@/lib/supabase";
 import Breadcrumb from "@/components/Breadcrumb";
 import ProductImageSelector from "@/components/ProductImageSelector";
@@ -93,6 +94,37 @@ export default function ThermometerPage() {
               ))}
             </div>
           </Reveal>
+
+          {product.companionAccessory && (
+            <Reveal>
+              <h2 className="font-heading text-2xl text-navy mb-4">
+                Companion Accessory: {product.companionAccessory.name}
+              </h2>
+              <div className="grid sm:grid-cols-[160px_1fr] gap-6 items-start">
+                <div className="relative aspect-square rounded-lg overflow-hidden bg-offwhite border border-navy/10">
+                  <Image
+                    src={product.companionAccessory.image}
+                    alt={product.companionAccessory.name}
+                    fill
+                    className="object-contain p-3"
+                  />
+                </div>
+                <div>
+                  <p className="text-navy/65 font-body leading-relaxed mb-4">
+                    {product.companionAccessory.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {product.companionAccessory.features.map((f) => (
+                      <li key={f} className="text-sm text-navy/70 font-body">• {f}</li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-navy/40 font-body mt-4">
+                    Included starting with the Plus option — see bundle options above for exactly what&apos;s included at each tier.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          )}
 
           <Reveal>
             <h2 className="font-heading text-2xl text-navy mb-4">How It Works</h2>

@@ -4,6 +4,14 @@ export type ProductVariant = {
   price: number;
   image: string;
   group?: string;
+  meta?: string;
+};
+
+export type CompanionAccessory = {
+  name: string;
+  description: string;
+  features: string[];
+  image: string;
 };
 
 export type Product = {
@@ -23,6 +31,7 @@ export type Product = {
   variants: ProductVariant[];
   defaultVariantId: string;
   variantGroups?: { key: string; label: string }[];
+  companionAccessory?: CompanionAccessory;
   image: {
     src: string;
     alt: string;
@@ -73,16 +82,28 @@ export const PRODUCTS: Product[] = [
       { key: "triple", label: "3 Thermometer Options" },
     ],
     variants: [
-      { id: "1kit-none", label: "1 Basal Body Thermometer — Standard", price: 47.89, image: "/images/products/thermometer-1x.jpg", group: "single" },
-      { id: "1kit-30", label: "1 Basal Body Thermometer — Plus", price: 49.76, image: "/images/products/thermometer-1x.jpg", group: "single" },
-      { id: "1kit-60", label: "1 Basal Body Thermometer — Premium", price: 53.45, image: "/images/products/thermometer-1x.jpg", group: "single" },
-      { id: "1kit-90", label: "1 Basal Body Thermometer — Complete", price: 54.95, image: "/images/products/thermometer-1x.jpg", group: "single" },
-      { id: "2kit-none", label: "2 Thermometers — Standard", price: 86.88, image: "/images/products/thermometer-2x.jpg", group: "double" },
-      { id: "2kit-30", label: "2 Thermometers — Plus", price: 87.64, image: "/images/products/thermometer-2x.jpg", group: "double" },
-      { id: "2kit-60", label: "2 Thermometers — Premium", price: 87.76, image: "/images/products/thermometer-2x.jpg", group: "double" },
-      { id: "2kit-90", label: "2 Thermometers — Complete", price: 94.82, image: "/images/products/thermometer-2x.jpg", group: "double" },
+      { id: "1kit-none", label: "1 Basal Body Thermometer — Standard", price: 47.89, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Thermometer only" },
+      { id: "1kit-30", label: "1 Basal Body Thermometer — Plus", price: 49.76, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes Fertility Tracking Journal & BBT Charting Kit" },
+      { id: "1kit-60", label: "1 Basal Body Thermometer — Premium", price: 53.45, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes charting journal + travel case" },
+      { id: "1kit-90", label: "1 Basal Body Thermometer — Complete", price: 54.95, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes 2 charting journals + travel case" },
+      { id: "2kit-none", label: "2 Thermometers — Standard", price: 86.88, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Thermometers only" },
+      { id: "2kit-30", label: "2 Thermometers — Plus", price: 87.64, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes Fertility Tracking Journal & BBT Charting Kit" },
+      { id: "2kit-60", label: "2 Thermometers — Premium", price: 87.76, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes charting journal + travel case" },
+      { id: "2kit-90", label: "2 Thermometers — Complete", price: 94.82, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes 2 charting journals + travel case" },
       { id: "3kit-none", label: "3 Thermometers", price: 96.95, image: "/images/products/thermometer-3x.jpg", group: "triple" },
     ],
+    companionAccessory: {
+      name: "Fertility Tracking Journal & BBT Charting Kit",
+      description:
+        "A dedicated paper journal for logging your daily basal body temperature readings alongside notes on your cycle. Includes month-at-a-glance charting pages so you can observe patterns over several cycles at a glance. This is a physical journal only — it does not test, analyze, or store any biological data.",
+      features: [
+        "12-month charting layout",
+        "Daily temperature log grid for each morning's reading",
+        "Note space for symptoms and observations",
+        "Compact, bedside-friendly size",
+      ],
+      image: "/images/products/bbt-journal.jpg",
+    },
     image: {
       src: "/images/products/thermometer-1x.jpg",
       alt: "Basal Body Thermometer",
