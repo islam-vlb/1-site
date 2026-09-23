@@ -5,7 +5,6 @@ import ProductImageSelector from "@/components/ProductImageSelector";
 import Highlights from "@/components/product/Highlights";
 import ShippingReturns from "@/components/product/ShippingReturns";
 import TrustSection from "@/components/product/TrustSection";
-import RelatedProduct from "@/components/product/RelatedProduct";
 import Faq from "@/components/Faq";
 import Reveal from "@/components/Reveal";
 
@@ -16,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 const product = PRODUCTS[0];
-const accessory = PRODUCTS[1];
 
 const faqItems = [
   {
@@ -135,12 +133,8 @@ export default function ThermometerPage() {
         <ShippingReturns />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <TrustSection />
-      </section>
-
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
-        <RelatedProduct product={accessory} />
+        <TrustSection />
       </section>
     </div>
   );
