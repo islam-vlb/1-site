@@ -7,13 +7,6 @@ export type ProductVariant = {
   meta?: string;
 };
 
-export type CompanionAccessory = {
-  name: string;
-  description: string;
-  features: string[];
-  image: string;
-};
-
 export type Product = {
   id: string;
   slug: string;
@@ -31,7 +24,6 @@ export type Product = {
   variants: ProductVariant[];
   defaultVariantId: string;
   variantGroups?: { key: string; label: string }[];
-  companionAccessory?: CompanionAccessory;
   image: {
     src: string;
     alt: string;
@@ -76,37 +68,58 @@ export const PRODUCTS: Product[] = [
       "temperature tracking", "fertility awareness", "digital thermometer", "morning temperature",
     ],
     defaultVariantId: "1kit-none",
-    variantGroups: [
-      { key: "single", label: "1 Thermometer Options" },
-      { key: "double", label: "2 Thermometer Options" },
-      { key: "triple", label: "3 Thermometer Options" },
-    ],
     variants: [
-      { id: "1kit-none", label: "1 Basal Body Thermometer — Standard", price: 47.89, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Thermometer only" },
-      { id: "1kit-30", label: "1 Basal Body Thermometer — Plus", price: 49.76, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes Fertility Tracking Journal & BBT Charting Kit" },
-      { id: "1kit-60", label: "1 Basal Body Thermometer — Premium", price: 53.45, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes charting journal + travel case" },
-      { id: "1kit-90", label: "1 Basal Body Thermometer — Complete", price: 54.95, image: "/images/products/thermometer-1x.jpg", group: "single", meta: "Includes 2 charting journals + travel case" },
-      { id: "2kit-none", label: "2 Thermometers — Standard", price: 86.88, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Thermometers only" },
-      { id: "2kit-30", label: "2 Thermometers — Plus", price: 87.64, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes Fertility Tracking Journal & BBT Charting Kit" },
-      { id: "2kit-60", label: "2 Thermometers — Premium", price: 87.76, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes charting journal + travel case" },
-      { id: "2kit-90", label: "2 Thermometers — Complete", price: 94.82, image: "/images/products/thermometer-2x.jpg", group: "double", meta: "Includes 2 charting journals + travel case" },
-      { id: "3kit-none", label: "3 Thermometers", price: 96.95, image: "/images/products/thermometer-3x.jpg", group: "triple" },
+      { id: "1kit-none", label: "1 Basal Body Thermometer", price: 47.89, image: "/images/products/thermometer-1x.jpg" },
+      { id: "2kit-none", label: "2 Basal Body Thermometers", price: 86.88, image: "/images/products/thermometer-2x.jpg" },
+      { id: "3kit-none", label: "3 Basal Body Thermometers", price: 96.95, image: "/images/products/thermometer-3x.jpg" },
     ],
-    companionAccessory: {
-      name: "Fertility Tracking Journal & BBT Charting Kit",
-      description:
-        "A dedicated paper journal for logging your daily basal body temperature readings alongside notes on your cycle. Includes month-at-a-glance charting pages so you can observe patterns over several cycles at a glance. This is a physical journal only — it does not test, analyze, or store any biological data.",
-      features: [
-        "12-month charting layout",
-        "Daily temperature log grid for each morning's reading",
-        "Note space for symptoms and observations",
-        "Compact, bedside-friendly size",
-      ],
-      image: "/images/products/bbt-journal.jpg",
-    },
     image: {
       src: "/images/products/thermometer-1x.jpg",
       alt: "Basal Body Thermometer",
+    },
+  },
+  {
+    id: "2",
+    slug: "male-fertility-support",
+    href: "/product/male-fertility-support",
+    category: "Wellness Accessory",
+    name: "Fertility Tracking Journal & BBT Charting Kit",
+    caption: "A dedicated paper journal for charting your daily basal body temperature and cycle notes.",
+    tagline: "Simple, Paper-Based Cycle Charting",
+    description:
+      "A dedicated paper journal for logging your daily basal body temperature readings alongside notes on your cycle. Includes month-at-a-glance charting pages so you can observe patterns over several cycles at a glance. This is a physical journal only — it does not test, analyze, or store any biological data.",
+    features: [
+      "12-month charting layout",
+      "Daily temperature log grid for each morning's reading",
+      "Note space for symptoms and observations",
+      "Compact, bedside-friendly size",
+      "Pairs naturally with your Basal Body Thermometer readings",
+    ],
+    whatsIncluded: [
+      "1 or more charting journals, per selected option",
+      "Discreet, unmarked outer packaging",
+    ],
+    highlights: [
+      { title: "Simple to Use", desc: "A plain paper journal — no setup, no batteries, no account." },
+      { title: "Built for Daily Use", desc: "One page per day makes it easy to build a consistent charting habit." },
+      { title: "Complements the Thermometer", desc: "A natural next step alongside your daily temperature readings." },
+      { title: "Discreetly Shipped", desc: "Arrives in plain, unmarked packaging like every order." },
+    ],
+    disclaimer:
+      "This product is a paper journal intended for general note-taking and personal record-keeping. It does not test, diagnose, or analyze any biological sample, and it is not a substitute for professional medical advice. Always consult a qualified healthcare provider regarding any health or fertility concerns.",
+    keywords: [
+      "fertility journal", "BBT charting", "cycle tracking journal", "temperature log",
+      "charting kit", "period tracker journal", "paper journal",
+    ],
+    defaultVariantId: "journal-1x",
+    variants: [
+      { id: "journal-1x", label: "1 Charting Journal", price: 12.99, image: "/images/products/journal-1x.jpg" },
+      { id: "journal-2x", label: "2 Charting Journals", price: 22.99, image: "/images/products/journal-2x.jpg" },
+      { id: "journal-3x", label: "3 Charting Journals", price: 29.99, image: "/images/products/journal-3x.jpg" },
+    ],
+    image: {
+      src: "/images/products/journal-1x.jpg",
+      alt: "Fertility Tracking Journal & BBT Charting Kit",
     },
   },
 ];
